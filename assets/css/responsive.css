@@ -1,11 +1,38 @@
 /* laptop */
 @media screen and (max-width: 1440px) {
   /* ! fz */
+  .content__item-price {
+    font-size: 5rem;
+  }
+
+  .hero__header-title,
+  .question__header-title,
+  .footer__flex--acive ~ p,
+  .flex--active-block p,
+  .footer__flex--acive > p {
+    font-size: 4.8rem;
+  }
+
+  .header__content-title {
+    font-size: 3.4rem;
+  }
+
+  .content-item--right-title,
+  .footer__flex-left {
+    font-size: 1.8rem;
+  }
+
   .hero__header span,
   .hero__header-desc,
   .header__content-desc,
   .item-left-block p,
-  .content__item-right span {
+  .content__item-right span,
+  .content-item--right-desc,
+  .footer__top-item span,
+  .footer__flex-right ul > li:first-child a,
+  .footer__bottom > p,
+  .footer__bottom-left,
+  .footer__flex-left > p {
     font-size: 1.6rem;
   }
 
@@ -13,15 +40,11 @@
   .header__nav-item,
   .hero__active,
   .header__content-activeLink a,
-  .content__item-cta a {
+  .content__item-cta a,
+  .footer__bottom-center .footer__active,
+  .footer__bottom > p.footer__bottom-left,
+  .footer__flex-right ul > li:not(:first-child) a {
     font-size: 1.4rem;
-  }
-  .header__content-title {
-    font-size: 34px;
-  }
-
-  .content__item-price {
-    font-size: 5rem;
   }
 
   /* !container */
@@ -85,6 +108,21 @@
   .item-left-block {
     margin-left: 80px;
   }
+
+  /*!logo--bigsize  */
+  .logo--bigsize img {
+    width: 846px;
+    height: 169px;
+  }
+  /* !Footer */
+  .footer__flex-right,
+  .footer__flex-left {
+    padding: 80px;
+  }
+
+  .footer__flex-right ul:not(:first-child) {
+    margin-left: 70px;
+  }
 }
 
 /* mobie iphone 6/7/8 */
@@ -93,10 +131,12 @@
   .hero__header span,
   .hero__header-desc,
   .header__content-desc,
-  .item-left-block p {
+  .item-left-block p,
+  .content-item--right-desc {
     font-size: 1.4rem;
   }
-  .content__item-right span {
+  .content__item-right span,
+  .content-item--right-title {
     font-size: 1.6rem;
   }
 
@@ -107,13 +147,15 @@
   .content__item-cta a {
     font-size: 1.4rem;
   }
-  .header__content-title {
-    font-size: 34px;
+  .header__content-title,
+  .content__item-price {
+    font-size: 3.4rem !important;
   }
 
   /* !Container */
   .container {
-    width: 100%;
+    width: 358px;
+    margin: 0 auto;
   }
   /* !header */
 
@@ -135,7 +177,7 @@
   /* !Hero */
 
   .hero-img {
-    width: 357px;
+    width: 100%;
     height: 219px;
     object-fit: cover;
     border-radius: 0%;
@@ -148,14 +190,14 @@
     position: static;
   }
 
-  .hero__header-title {
+  .hero__header-title,
+  .question__header-title {
     font-size: 2.8rem;
     color: #fff;
   }
 
   .service__block__header {
     flex-direction: column;
-    align-items: flex-start;
   }
 
   .block__header__content {
@@ -193,7 +235,47 @@
     padding: 15px;
   }
 
-  .item-left-block p {
+  /* ! Question */
+  .question__content {
+    grid-template-columns: 1fr;
+  }
+
+  .question__content-item {
+    padding: 20px 24px;
     width: 100%;
+  }
+
+  .question__col.right-col {
+    display: none;
+  }
+
+  /*!logo--bigsize  */
+  .logo--bigsize img {
+    width: 300px;
+    height: 150px;
+  }
+
+  /*!Footer  */
+  .footer__flex {
+    flex-direction: column;
+  }
+
+  .footer__flex-right {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__flex-right ul:not(:first-child) {
+    margin: 0;
+  }
+  .footer__flex-right ul:nth-child(even) {
+    margin-left: 50px;
+  }
+  .footer__flex-right ul:nth-child(3) {
+    margin-top: 40px;
+  }
+  .footer__flex-right ul:last-child {
+    margin-top: 40px;
   }
 }
