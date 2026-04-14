@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --color-brand: #4A2BED;
+}
+
 html,
 body {
     scroll-behavior: smooth;
@@ -10,3 +14,22 @@ body {
 body {
     font-family: 'Manrope', sans-serif;
 }
+
+.hover-item {
+    transition: color .3s ease;
+}
+
+.hover-item:hover {
+    color: var(--color-brand);
+}
+
+.no-drag {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+/* @layer components {
+    .nav-item {
+        @apply 
+    }
+} */
