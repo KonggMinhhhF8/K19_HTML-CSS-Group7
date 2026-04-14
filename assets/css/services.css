@@ -24,6 +24,10 @@ html {
   border-bottom: 1px solid #1c1c21;
 }
 
+.header__content .toggle-btn {
+  display: none;
+}
+
 .header__content {
   position: relative;
   padding: 30px 40px;
@@ -268,20 +272,33 @@ html {
 }
 
 .header-preview-btn {
+  display: flex;
+}
+
+.header-preview-btn::after {
+  content: "";
   position: absolute;
-  bottom: 0;
+  width: 185px;
   left: 50%;
   transform: translateX(-50%);
+  bottom: -45px;
+  border-bottom: 100px solid #070708;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+}
+
+.header-preview-btn .block {
+  position: absolute;
   display: flex;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%);
   gap: 16px;
   padding: 14px;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.header-preview-btn::before {
-  content: "";
+  z-index: 1;
 }
 
 .header-preview-btn button {
@@ -544,6 +561,8 @@ input[type="checkbox"]:checked ~ .question__content-item--btn > .arrow-down {
 
 .flex--active-block {
   display: flex;
+  align-items: center;
+  margin-bottom: 8px;
   color: #fff;
 }
 
@@ -622,6 +641,7 @@ input[type="checkbox"]:checked ~ .question__content-item--btn > .arrow-down {
   border: 1px solid #1c1c21;
   padding: 1rem;
   border-radius: 999px;
+  order: 1;
 }
 
 .footer__bottom-center .footer__active {
@@ -635,4 +655,5 @@ input[type="checkbox"]:checked ~ .question__content-item--btn > .arrow-down {
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 1.5;
+  order: 2;
 }
