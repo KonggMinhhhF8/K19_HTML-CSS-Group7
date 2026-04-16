@@ -535,7 +535,7 @@
                     <!-- #1 slide -->
                     <div class="flex flex-col w-full shrink-0 lg:flex-1">
                         <img src=" ./assets/images/porfolio-img.png" alt="Faces of Resilience"
-                            class="w-full h-[353px] rounded-2xl object-cover lg:w-[428px] lg:h-[428px]">
+                            class="w-full h-[353px] rounded-2xl object-cover lg:w-[428px] lg:h-auto">
                         <div class="flex justify-between mt-4 items-start">
                             <div class="flex flex-col">
                                 <h4 class="text-[#CACACE] font-medium text-base xl:text-xl">
@@ -603,7 +603,7 @@
                 </div>
 
                 <!-- Button slide -->
-                <div class="w-fit flex gap-x-3 mx-auto mt-10 border border-[#1C1C21] rounded-full p-2 lg:hidden">
+                <div class="w-fit flex gap-x-3 mx-auto border border-[#1C1C21] rounded-full p-2 lg:hidden">
                     <button
                         class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity">
                         <img src="./assets/icons/arrown-slide.svg" alt="icon arrown">
@@ -617,10 +617,11 @@
             </div>
         </section>
 
+        <!-- #5 FAQ -->
         <section class="w-full mt-20 lg:mt-37 xl:mt-50">
-            <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
+            <div class="max-w-[1597px] mx-auto px-4 lg:px-20 xl:px-15">
                 <div
-                    class="flex flex-col items-start border-b border-[#1C1C21] pb-5 lg:flex-row lg:items-center lg:justify-between lg:px-20 lg:pb-10 xl:px-10">
+                    class="flex flex-col items-start border-b border-[#1C1C21] pb-5 lg:flex-row lg:items-center lg:justify-between  lg:pb-10 xl:px-10">
                     <h2 class="text-[28px] text-white uppercase">
                         <span class="text-sm text-[#797C86] font-semibold lg:text-base xl:text-xl">
                             FAQ’s
@@ -633,7 +634,7 @@
                 <!-- list FAQs -->
                 <div class="flex flex-col lg:flex-row lg:divide-x lg:divide-[#1C1C21]">
                     <!-- Group FAQ -->
-                    <div>
+                    <div class="flex-1">
                         <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15 ">
                             <div class="flex gap-x-7 items-center justify-between">
                                 <h4 class="text-[#AFB0B6] font-semibold text-base uppercase  lg:text-lg xl:text-xl">
@@ -714,7 +715,7 @@
                     </div>
 
                     <!-- Group FAQ -->
-                    <div>
+                    <div class="flex-1">
                         <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15">
                             <div class="flex gap-x-7 items-center justify-between">
                                 <h4 class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl">
@@ -797,15 +798,270 @@
             </div>
 
         </section>
+
+        <!-- #6 Rating -->
+        <section class="w-full mt-20 lg:mt-37 xl:mt-50">
+            <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
+                <div class="border-b border-[#1C1C21] pb-5">
+                    <!-- Heading -->
+                    <div
+                        class="flex flex-col items-start  pb-5 lg:flex-row lg:items-end lg:justify-between lg:px-20 lg:pb-10 xl:px-10">
+                        <h2 class="text-[28px] text-white uppercase">
+                            <span class="text-sm text-[#797C86] font-semibold lg:text-base xl:text-xl">
+                                Testimonials
+                            </span>
+                            <span class="block font-semibold lg:mt-[2px] lg:text-5xl xl:text-[58px] xl:mt-1">What My
+                                Clients
+                                Say</span>
+                            <!-- Total span -->
+                            <div class="hidden lg:block lg:mt-4">
+                                <p class="text-[#62646C] text-sm font-normal lg:text-base xl:text-lg">Total Reviews</p>
+                                <span
+                                    class="block font-medium text-[#CACACE] text-xl mt-[2px] lg:text-2xl xl:text-[28px]">
+                                    323
+                                </span>
+                            </div>
+                        </h2>
+
+                        <!-- Button node slide -->
+                        <div class="flex items-center gap-x-5 xl:gap-x-7">
+                            <div
+                                class="hidden lg:flex lg:gap-x-3  lg:border lg:border-[#1C1C21] lg:rounded-full lg:p-2">
+                                <button
+                                    class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer">
+                                    <img src="./assets/icons/arrown-slide.svg" alt="icon arrow"
+                                        class="block w-[10px] h-[17px] object-cover shrink-0 ">
+                                </button>
+
+                                <button
+                                    class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer">
+                                    <img src="./assets/icons/arrown-slide.svg" alt="icon arrown"
+                                        class="block w-[10px] h-[17px] object-cover shrink-0 scale-x-[-1] ">
+                                </button>
+                            </div>
+                            <!-- CTA -->
+                            <a href="#!"
+                                class="flex justify-center items-center w-fit h-[49px] mt-5 border border-transparent rounded-lg bg-[#1C1C21] bg-gradient-to-b from-[#2F2F37] to-transparent text-sm text-white font-medium px-[1px] pt-[1px] pb-[0px] hover:opacity-80 transition-opacity lg:shrink-0 lg:mt-0 lg:text-sm xl:text-lg">
+                                <span
+                                    class="min-h-full border border-transparent rounded-lg px-5 py-3 bg-[#1C1C21] xl:px-6 xl:py-4">View
+                                    All Services -&gt;</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Total span -->
+                    <div class="mt-5 lg:hidden">
+                        <p class="text-[#62646C] text-sm font-normal">Total Reviews</p>
+                        <span class="block font-medium text-[#CACACE] text-xl mt-[2px]">
+                            323
+                        </span>
+                    </div>
+                </div>
+                <!-- Slide rating -->
+                <div
+                    class="flex flex-nowrap overflow-hidden lg:grid lg:grid-cols-3 lg:gap-x-[50px] lg:mt-15 xl:mt-20 xl:px-10">
+                    <!-- box #1 -->
+                    <div
+                        class="min-w-full mt-10 border border-[#1C1C21] rounded-[10px] p-6 bg-[url('./assets/images/background-rating-box.svg')] bg-no-repeat bg-cover flex-1 shrink-0 lg:min-w-0">
+                        <!-- heading box -->
+                        <div class="flex justify-between items-center">
+                            <div class="flex flex-col">
+                                <h5 class="text-[#E4E4E6] font-semibold text-base lg:text-lg xl:text-xl">
+                                    Emily Johnson
+                                </h5>
+                                <span class="block text-[#62646C] font-normal text-sm">
+                                    USA, California
+                                </span>
+                            </div>
+                            <!-- Social list -->
+                            <div
+                                class="flex flex-col xl:flex-row xl:items-center xl:gap-x-15  xl:mt-10 xl:flex-row-reverse ">
+                                <div
+                                    class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2">
+                                    <!-- Facebook -->
+                                    <a href="#!"
+                                        class="no-dragno-drag  rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
+                                        <div
+                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2 ">
+                                            <img src="./assets/icons/icon-facebook.svg" alt="Facebook icon"
+                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5">
+                                        </div>
+                                    </a>
+                                    <!-- Twitter -->
+                                    <a href="#!"
+                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
+                                        <div
+                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2 ">
+                                            <img src="./assets/icons/icon-x.svg" alt="X icon"
+                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5">
+                                        </div>
+                                    </a>
+                                    <!-- Linkedin -->
+                                    <a href="#!"
+                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
+                                        <div
+                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2 ">
+                                            <img src="./assets/icons/icon-linkedin.svg" alt="Linkedin icon"
+                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5">
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Rating -->
+                        <img src="./assets/icons/rating-5-start.svg" alt="rating 5 start"
+                            class="mt-5 w-[116px] h-[20px] object-cover">
+                        <!-- Description -->
+                        <p class="mt-5 text-base font-medium text-[#E4E4E6] leading-normal lg:text-lg xl:text-xl">
+                            Damien's photography doesn't just capture moments; it captures emotions. Hes work is simply
+                            mesmerizing.
+                        </p>
+                    </div>
+
+                    <!-- box #2 -->
+                    <div
+                        class="min-w-full mt-10 border border-[#1C1C21] rounded-[10px] p-6 bg-[url('./assets/images/background-rating-box.svg')] bg-no-repeat bg-cover lg:flex-1 lg:min-w-0">
+                        <!-- heading box -->
+                        <div class="flex justify-between items-center">
+                            <div class="flex flex-col">
+                                <h5 class="text-[#E4E4E6] font-semibold text-base lg:text-lg xl:text-xl">
+                                    John Smith
+                                </h5>
+                                <span class="block text-[#62646C] font-normal text-sm">
+                                    USA, California
+                                </span>
+                            </div>
+                            <!-- Social list -->
+                            <div
+                                class="flex flex-col xl:flex-row xl:items-center xl:gap-x-15  xl:mt-10 xl:flex-row-reverse ">
+                                <div
+                                    class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2">
+                                    <!-- Facebook -->
+                                    <a href="#!"
+                                        class="no-dragno-drag  rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
+                                        <div
+                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2 ">
+                                            <img src="./assets/icons/icon-facebook.svg" alt="Facebook icon"
+                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5">
+                                        </div>
+                                    </a>
+                                    <!-- Twitter -->
+                                    <a href="#!"
+                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
+                                        <div
+                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2 ">
+                                            <img src="./assets/icons/icon-x.svg" alt="X icon"
+                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5">
+                                        </div>
+                                    </a>
+                                    <!-- Linkedin -->
+                                    <a href="#!"
+                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
+                                        <div
+                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2 ">
+                                            <img src="./assets/icons/icon-linkedin.svg" alt="Linkedin icon"
+                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5">
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Rating -->
+                        <img src="./assets/icons/rating-5-start.svg" alt="rating 5 start"
+                            class="mt-5 w-[116px] h-[20px] object-cover">
+                        <!-- Description -->
+                        <p class="mt-5 text-base font-medium text-[#E4E4E6] leading-normal lg:text-lg xl:text-xl">
+                            Damien has an incredible talent for making every event feel effortless, and the results
+                            speak for themselves.
+                        </p>
+                    </div>
+
+                    <!-- box #3 -->
+                    <div
+                        class="min-w-full mt-10 border border-[#1C1C21] rounded-[10px] p-6 bg-[url('./assets/images/background-rating-box.svg')] bg-no-repeat bg-cover lg:flex-1 lg:min-w-0">
+                        <!-- heading box -->
+                        <div class="flex justify-between items-center">
+                            <div class="flex flex-col">
+                                <h5 class="text-[#E4E4E6] font-semibold text-base lg:text-lg xl:text-xl">
+                                    Samantha Davis
+                                </h5>
+                                <span class="block text-[#62646C] font-normal text-sm">
+                                    USA, California
+                                </span>
+                            </div>
+                            <!-- Social list -->
+                            <div
+                                class="flex flex-col xl:flex-row xl:items-center xl:gap-x-15  xl:mt-10 xl:flex-row-reverse ">
+                                <div
+                                    class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2">
+                                    <!-- Facebook -->
+                                    <a href="#!"
+                                        class="no-dragno-drag  rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
+                                        <div
+                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2 ">
+                                            <img src="./assets/icons/icon-facebook.svg" alt="Facebook icon"
+                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5">
+                                        </div>
+                                    </a>
+                                    <!-- Twitter -->
+                                    <a href="#!"
+                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
+                                        <div
+                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2 ">
+                                            <img src="./assets/icons/icon-x.svg" alt="X icon"
+                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5">
+                                        </div>
+                                    </a>
+                                    <!-- Linkedin -->
+                                    <a href="#!"
+                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
+                                        <div
+                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2 ">
+                                            <img src="./assets/icons/icon-linkedin.svg" alt="Linkedin icon"
+                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5">
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Rating -->
+                        <img src="./assets/icons/rating-5-start.svg" alt="rating 5 start"
+                            class="mt-5 w-[116px] h-[20px] object-cover">
+                        <!-- Description -->
+                        <p class="mt-5 text-base font-medium text-[#E4E4E6] leading-normal lg:text-lg xl:text-xl">
+                            I was blown away by Damien's ability to capture the essence of our wedding day. Hes
+                            photographs are our memories.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Button slide -->
+                <div class="w-fit flex gap-x-3 mx-auto mt-12 border border-[#1C1C21] rounded-full p-2 lg:hidden ">
+                    <button
+                        class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity">
+                        <img src="./assets/icons/arrown-slide.svg" alt="icon arrown">
+                    </button>
+
+                    <button
+                        class=" border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity">
+                        <img src="./assets/icons/arrown-slide.svg" alt="icon arrown" class="scale-x-[-1]">
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
 
     <!--Footer  -->
-    <footer class=" w-full overflow-x-hidden pb-5">
+    <footer class=" w-full overflow-x-hidden pb-5 mt-20 lg:mt-37 xl:mt-50">
         <!-- Footer TOP -->
         <div class="max-w-[1597px] mx-auto">
             <!-- Inner -->
-            <div class="px-4 pb-5 lg:px-20 lg:pb-15 xl:px-40 xl:pb-25">
+            <div class="px-4 pb-5 lg:px-20 lg:pb-15 xl:px-40 xl:pb-25 ">
                 <img class="no-drag block ml-auto w-[315px] h-auto object-cover lg:w-[846px] xl:w-[1050px]"
                     src="./assets/images/bg-logo.png" alt="background logo">
             </div>
@@ -1079,4 +1335,4 @@ xl:after:-scale-x-100">
     </footer>
 </body>
 
-</html>
+</html>`
