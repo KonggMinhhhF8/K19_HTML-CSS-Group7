@@ -14,9 +14,10 @@ html {
 }
 
 .container {
-  max-width: 1596px;
+  max-width: 1597px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 60px;
 }
 
 /* ! Header */
@@ -73,9 +74,11 @@ html {
 
 .header__btn {
   padding: 16px 24px;
+  border: none;
   color: #fff;
   border-radius: 0.5rem;
   background: #1c1c21;
+  border: 1px solid #2f2f37;
 }
 
 /* !hero */
@@ -101,7 +104,7 @@ html {
   position: absolute;
   bottom: -40px;
   top: 0;
-  left: 221px;
+  left: 100px;
   width: 40px;
   height: 40px;
   rotate: 90deg;
@@ -642,6 +645,7 @@ input[type="checkbox"]:checked ~ .question__content-item--btn > .arrow-down {
   padding: 1rem;
   border-radius: 999px;
   order: 1;
+  margin-bottom: 20px;
 }
 
 .footer__bottom-center .footer__active {

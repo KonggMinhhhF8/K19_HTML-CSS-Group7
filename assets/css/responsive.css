@@ -55,6 +55,7 @@
   /* !container */
   .container {
     max-width: 1280px;
+    padding: 0 40px;
   }
 
   /* !Header */
@@ -75,7 +76,7 @@
   }
 
   .image-top-right {
-    left: 161px;
+    left: 80px;
   }
 
   .hero-icon {
@@ -130,6 +131,28 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .hero-img {
+    width: 100%;
+  }
+  .image-top-right,
+  .hero-icon,
+  .image-bottom-right,
+  .image-top-left,
+  .hero__active,
+  .image-right-bottom-left,
+  .image-right-bottom-right {
+    display: none;
+  }
+
+  .hero__header {
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    position: static;
+  }
+}
+
 /* mobie iphone 6/7/8 */
 @media screen and (max-width: 540px) {
   /* ! fz */
@@ -160,8 +183,9 @@
 
   /* !Container */
   .container {
-    width: 358px;
+    width: 100%;
     margin: 0 auto;
+    padding: 16px;
   }
   /* !header */
   .header__content {
@@ -340,6 +364,7 @@
     margin-bottom: 1.6rem;
     order: 1;
   }
+
   .footer__bottom-center {
     padding: 8px;
     order: 2;
