@@ -341,10 +341,18 @@
     flex-direction: column;
   }
 
+  .footer__flex-left {
+    border-bottom: 1px solid #111114;
+  }
+
   .footer__flex-right {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__flex--acive {
+    margin-top: 2rem;
   }
 
   .footer__flex-right ul:not(:first-child) {

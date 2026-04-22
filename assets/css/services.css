@@ -587,7 +587,7 @@ input[type="checkbox"]:checked ~ .question__content-item--btn > .arrow-down {
 }
 
 .footer__flex-right ul:not(:first-child) {
-  margin-left: 111px;
+  margin-left: 75px;
 }
 
 .footer__flex-right ul > li a {
