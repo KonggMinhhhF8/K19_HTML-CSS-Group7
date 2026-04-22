@@ -1,1453 +1,1845 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page Thành Thiên</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- Reset CSS -->
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+
     <!-- Link fonts -->
-    <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
     <!-- Config Variable Tailwind -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        // 'tên-class-tailwind' : ['tên-font-family-trong-css-thuần', 'font-dự-phòng']
-                        'manrope': ['"Manrope"', 'sans-serif'],
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              // 'tên-class-tailwind' : ['tên-font-family-trong-css-thuần', 'font-dự-phòng']
+              manrope: ['"Manrope"', "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
 
     <style type="text/tailwindcss">
-        @layer components {
-            .nav-item {
-                @apply block px-10 py-6 text-sm text-[#AFB0B6] font-medium hover:text-white hover:bg-[#131316] transition-all duration-300 ease-in-out xl:px-13 xl:py-8 xl:text-lg;
-            }
-
-            .nav-item.active {
-                @apply  bg-[#131316] text-[#fff] ; 
-             }
-
-             .sidebar.active {
-                @apply  bg-[#131316] !text-[#fff] ; 
-             }
-
+      @layer components {
+        .nav-item {
+          @apply block px-10 py-6 text-sm text-[#AFB0B6] font-medium hover:text-white hover:bg-[#131316] transition-all duration-300 ease-in-out xl:px-13 xl:py-8;
         }
 
         @layer utilities {
-            @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } 
-        }
-            .animate-marquee {
-                    animation: scroll 20s linear infinite;
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
             }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .animate-marquee {
+            animation: scroll 20s linear infinite;
+          }
         }
-  </style>
+      }
+    </style>
+  </head>
 
-</head>
-
-<body class="bg-[#070708]">
+  <body class="bg-[#070708]">
     <!-- Header -->
-    <header class="w-full border-b-2 border-[#1C1C21] relative sticky top-0 z-50 bg-[#0E0E10]">
-
-        <input type="checkbox" id="mobile-menu-toggle" class="hidden peer" />
-
-        <div class="max-w-[1597px] mx-auto px-4 lg:px-15">
-            <div
-                class="flex justify-between items-center border-l border-r border-[#1C1C21] pt-10 pl-4 lg:px-4 lg:pt-5 xl:items-end xl:px-10 xl:pt-0">
-
-                <a href="/" class="xl:self-center">
-                    <img src="./assets/images/logo-brand.svg" alt="Logo DAMIEN"
-                        class="w-[90px] h-auto object-contain lg:w-[110px] xl:w-[135px]">
-                </a>
-
-                <nav class="hidden lg:block lg:leading-none">
-                    <ul
-                        class="flex items-center divide-x divide-[#1C1C21] border border-b-0 border-[#1C1C21] rounded-t-[10px] overflow-hidden">
-                        <li><a href="#!" class="nav-item active">Home</a></li>
-                        <li><a href="#!" class="nav-item">About Me</a></li>
-                        <li><a href="#!" class="nav-item">Portfolio</a></li>
-                        <li><a href="/services.html" class="nav-item">Services</a></li>
-                    </ul>
-                </nav>
-
-                <label for="mobile-menu-toggle"
-                    class="cursor-pointer block lg:hidden px-6 pt-7 pb-6 border border-b-0 border-r-0 border-[#1C1C21] rounded-tl-[20px] focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M3.5 7.875C3.5 7.39175 3.89175 7 4.375 7H23.625C24.1082 7 24.5 7.39175 24.5 7.875C24.5 8.35825 24.1082 8.75 23.625 8.75H4.375C3.89175 8.75 3.5 8.35825 3.5 7.875ZM3.5 14C3.5 13.5168 3.89175 13.125 4.375 13.125H23.625C24.1082 13.125 24.5 13.5168 24.5 14C24.5 14.4832 24.1082 14.875 23.625 14.875H4.375C3.89175 14.875 3.5 14.4832 3.5 14ZM13.125 20.125C13.125 19.6418 13.5168 19.25 14 19.25H23.625C24.1082 19.25 24.5 19.6418 24.5 20.125C24.5 20.6082 24.1082 21 23.625 21H14C13.5168 21 13.125 20.6082 13.125 20.125Z"
-                            fill="white" />
-                    </svg>
-                </label>
-
-                <a href="#!"
-                    class="hidden lg:inline-flex justify-between items-center border border-[#2F2F37] rounded-lg px-6 py-4 bg-[#1C1C21] text-white text-sm font-medium hover:bg-[#2F2F37] transition-all duration-200 xl:my-7 xl:text-lg">
-                    Contact Me
-                </a>
-            </div>
-        </div>
-
+    <header class="w-full border-b-2 border-[#1C1C21]">
+      <!-- Wrapper -->
+      <div class="max-w-[1597px] mx-auto px-4 lg:px-15">
+        <!-- Inner -->
         <div
-            class="fixed inset-0 bg-black/60 z-40 lg:hidden opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-300">
-        </div>
+          class="flex justify-between items-center border-l border-r border-[#1C1C21] pt-10 pl-4 lg:px-4 lg:pt-5 xl:items-end xl:px-10 xl:pt-0"
+        >
+          <!-- Logo -->
+          <a href="/" class="xl:self-center">
+            <img
+              src="./assets/images/logo-brand.svg"
+              alt="Logo DAMIEN"
+              class="w-[90px] h-auto object-contain lg:w-[110px] xl:w-[135px]"
+            />
+          </a>
 
-        <!-- Canvas Menu mobile -->
-        <aside
-            class="fixed top-0 right-0 w-[85%] max-w-[350px] h-full bg-[#0E0E10] border-l border-[#1C1C21] z-50 lg:hidden transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col">
-            <div class="flex items-center justify-between p-6 border-b border-[#1C1C21]">
-                <img src="./assets/images/logo-brand.svg" alt="Logo DAMIEN" class="w-[90px] h-auto object-contain">
-                <label for="mobile-menu-toggle"
-                    class="cursor-pointer bg-white rounded-[10px] p-2 hover:bg-gray-200 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </label>
-            </div>
-            <ul class="flex flex-col text-white text-lg font-medium">
-                <li>
-                    <a href="#!"
-                        class="sidebar active block text-[#AFB0B6] p-6 border-b border-[#1C1C21] hover:bg-[#1C1C21] transition-colors">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#!"
-                        class="block text-[#AFB0B6] p-6 border-b border-[#1C1C21] hover:bg-[#1C1C21] transition-colors">
-                        About Me
-                    </a>
-                </li>
-                <li>
-                    <a href="#!"
-                        class="block text-[#AFB0B6] p-6 border-b border-[#1C1C21] hover:bg-[#1C1C21] transition-colors">
-                        Portfolio
-                    </a>
-                </li>
-                <li>
-                    <a href="/services.html"
-                        class="block text-[#AFB0B6] p-6 border-b border-[#1C1C21] hover:bg-[#1C1C21] transition-colors">
-                        Services
-                    </a>
-                </li>
+          <!-- Nav -->
+          <nav class="hidden lg:block lg:leading-none">
+            <ul
+              class="flex items-center divide-x divide-[#1C1C21] border border-b-0 border-[#1C1C21] rounded-t-[10px] overflow-hidden"
+            >
+              <li>
+                <a href="#!" class="nav-item">Home</a>
+              </li>
+              <li>
+                <a href="#!" class="nav-item">About Me</a>
+              </li>
+              <li>
+                <a href="#!" class="nav-item">Portfolio</a>
+              </li>
+              <li>
+                <a href="#!" class="nav-item">Services</a>
+              </li>
             </ul>
-            <!-- Button in aside -->
-            <div class="mt-auto p-6 pb-10">
-                <a href="#!"
-                    class="flex justify-center items-center w-full bg-[#3F51B5] text-white rounded-full py-4 text-lg font-medium hover:bg-[#303F9F] transition-colors shadow-[inset_4px_4px_17.4px_0px_#FFFFFF47]">
-                    Contact Me
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" width="20" height="20" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </a>
-            </div>
-        </aside>
+          </nav>
 
+          <!-- Menu Mobile -->
+          <button
+            class="block lg:hidden px-6 pt-7 pb-6 border border-b-0 border-r-0 border-[#1C1C21] rounded-tl-[20px] focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3.5 7.875C3.5 7.39175 3.89175 7 4.375 7H23.625C24.1082 7 24.5 7.39175 24.5 7.875C24.5 8.35825 24.1082 8.75 23.625 8.75H4.375C3.89175 8.75 3.5 8.35825 3.5 7.875ZM3.5 14C3.5 13.5168 3.89175 13.125 4.375 13.125H23.625C24.1082 13.125 24.5 13.5168 24.5 14C24.5 14.4832 24.1082 14.875 23.625 14.875H4.375C3.89175 14.875 3.5 14.4832 3.5 14ZM13.125 20.125C13.125 19.6418 13.5168 19.25 14 19.25H23.625C24.1082 19.25 24.5 19.6418 24.5 20.125C24.5 20.6082 24.1082 21 23.625 21H14C13.5168 21 13.125 20.6082 13.125 20.125Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+
+          <!-- CTA -->
+          <a
+            href="#!"
+            class="hidden lg:inline-flex justify-between items-center border border-[#2F2F37] rounded-lg px-6 py-4 bg-[#1C1C21] text-white text-sm font-medium hover:bg-[#2F2F37] transition-all duration-200 xl:my-7"
+          >
+            Contact Me
+          </a>
+        </div>
+      </div>
     </header>
-
 
     <!-- Main -->
     <main class="overflow-hidden">
-        <!-- #1 Hero section -->
-        <section class="w-full">
-            <!-- Hero section--TOP -->
-            <div class="max-w-[1597px] mx-auto xl:px-15">
-                <div class="px-4 py-10 md:flex  md:items-center md:justify-between lg:px-20 xl:px-10 xl:py-0">
-                    <h1 class="text-[40px] text-[#E4E4E6] uppercase">
-                        <span class="text-sm text-[#62646C] font-medium lg:text-lg">
-                            Stunning Photography by
-                        </span>
-                        <span class="block mt-1 font-semibold lg:text-6xl">Damien Braun</span>
-                    </h1>
+      <!-- #1 Hero section -->
+      <section class="w-full">
+        <!-- Hero section--TOP -->
+        <div class="max-w-[1597px] mx-auto xl:px-15">
+          <div
+            class="px-4 py-10 md:flex md:items-center md:justify-between lg:px-20 xl:px-10 xl:py-0"
+          >
+            <h1 class="text-[40px] text-[#E4E4E6] uppercase">
+              <span class="text-sm text-[#62646C] font-medium lg:text-lg">
+                Stunning Photography by
+              </span>
+              <span class="block mt-1 font-semibold lg:text-6xl"
+                >Damien Braun</span
+              >
+            </h1>
 
+            <!-- img Hero section -->
+            <img
+              src="./assets/images/icon-svg-hero-section.svg"
+              alt="background icon"
+              class="no-drag hidden xl:block xl:w-[262px] xl:h-auto xl:object-cover"
+            />
 
-                    <!-- img Hero section -->
-                    <img src="./assets/images/icon-svg-hero-section.svg" alt="background icon"
-                        class="no-drag hidden xl:block xl:w-[262px] xl:h-auto xl:object-cover">
+            <!-- Component Let's Together -->
+            <div
+              class="mt-5 text-[28px] text-white uppercase font-semibold lg:mt-12 xl:mt-15 lg:text-5xl xl:text-[58px]"
+            >
+              <div class="flex items-center gap-2 xl:gap-x-3">
+                <span>Let’s</span>
+                <span
+                  class="flex items-center py-4 px-8 bg-[#4A2CED] rounded-[100px] shadow-[inset_4px_4px_17.4px_0px_#FFFFFF47] lg:px-7 lg:py-3"
+                >
+                  <img
+                    src="./assets/icons/icon-arrow.svg"
+                    alt="icon arrow"
+                    class="no-drag w-[20px] h-auto object-cover lg:w-6"
+                  />
+                </span>
+              </div>
+              <div class="mt-1 whitespace-nowrap xl:mt-3">Work Together</div>
+            </div>
+          </div>
+        </div>
 
-                    <!-- Component Let's Together -->
+        <!-- Hero section--list -->
+        <div class="w-full flex bg-[#0E0E10]">
+          <div
+            class="animate-marquee flex items-center gap-5 border-y border-[#1C1C21] py-4 whitespace-nowrap lg:gap-x-4 xl:py-7 xl:gap-x-5"
+          >
+            <!-- item #1 -->
+            <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+              <!-- icon -->
+              <img
+                src="./assets/icons/icon-brand.svg"
+                alt="icon"
+                class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+              />
+              <!-- text -->
+              <span class="text-sm text-[#D6D0FB] xl:text-lg"
+                >Event Photography</span
+              >
+            </div>
+            <!-- item #2 -->
+            <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+              <!-- icon -->
+              <img
+                src="./assets/icons/icon-brand.svg"
+                alt="icon"
+                class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+              />
+              <!-- text -->
+              <span class="text-sm text-[#D6D0FB] xl:text-lg"
+                >Comercial Photography</span
+              >
+            </div>
+            <!-- item #3 -->
+            <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+              <!-- icon -->
+              <img
+                src="./assets/icons/icon-brand.svg"
+                alt="icon"
+                class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+              />
+              <!-- text -->
+              <span class="text-sm text-[#D6D0FB] xl:text-lg"
+                >Product Photography</span
+              >
+            </div>
+            <!-- item #4 -->
+            <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+              <!-- icon -->
+              <img
+                src="./assets/icons/icon-brand.svg"
+                alt="icon"
+                class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+              />
+              <!-- text -->
+              <span class="text-sm text-[#D6D0FB] xl:text-lg"
+                >Wedding Photography</span
+              >
+            </div>
+            <!-- item #5 -->
+            <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+              <!-- icon -->
+              <img
+                src="./assets/icons/icon-brand.svg"
+                alt="icon"
+                class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+              />
+              <!-- text -->
+              <span class="text-sm text-[#D6D0FB] xl:text-lg"
+                >Landscape Photography</span
+              >
+            </div>
+            <!-- item #6 -->
+            <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+              <!-- icon -->
+              <img
+                src="./assets/icons/icon-brand.svg"
+                alt="icon"
+                class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+              />
+              <!-- text -->
+              <span class="text-sm text-[#D6D0FB] xl:text-lg"
+                >Branding Photography</span
+              >
+            </div>
+            <!-- item #7 -->
+            <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+              <!-- icon -->
+              <img
+                src="./assets/icons/icon-brand.svg"
+                alt="icon"
+                class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+              />
+              <!-- text -->
+              <span class="text-sm text-[#D6D0FB] xl:text-lg"
+                >Portrait Photography</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- LCP image -->
+        <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
+          <div class="flex justify-center lg:px-20 xl:px-10">
+            <img
+              fetchpriority="high"
+              loading="eager"
+              src="./assets/images/lcp-hero-section.png"
+              alt="Largest Contentful Paint"
+              class="no-drag block w-full max-w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- #2 about section -->
+      <section class="w-full mt-20 lg:mt-37 xl:mt-50">
+        <!-- Wrapper about -->
+        <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
+          <!-- about header -->
+          <div
+            class="flex flex-col border-b border-[#1C1C21] pb-5 lg:flex-row lg:justify-between lg:px-20 lg:pb-10 xl:px-10"
+          >
+            <h2 class="text-[28px] text-white uppercase">
+              <span
+                class="text-sm text-[#797C86] font-semibold lg:text-lg xl:text-xl"
+              >
+                about
+              </span>
+              <span
+                class="block font-semibold lg:mt-[2px] lg:text-5xl xl:text-[58px]"
+                >I am Damien</span
+              >
+            </h2>
+
+            <!-- CTA -->
+            <a
+              href="#!"
+              class="flex justify-center items-center w-fit h-[49px] mt-5 border border-transparent rounded-lg bg-[#1C1C21] bg-gradient-to-b from-[#2F2F37] to-transparent text-sm text-white font-medium px-[1px] pt-[1px] pb-[0px] hover:opacity-80 transition-opacity"
+            >
+              <span
+                class="min-h-full border border-transparent rounded-lg px-5 py-3 bg-[#1C1C21] xl:px-6 xl:py-4"
+                >Know More -></span
+              >
+            </a>
+          </div>
+
+          <!-- Inner -->
+          <div class="lg:flex lg:px-20 lg:pt-15 xl:px-10">
+            <!-- about bottom -->
+            <div class="mt-10 lg:basis-[49%] lg:mt-0 lg:px-0">
+              <img
+                src="./assets/images/about-img.png"
+                alt="about image"
+                class="no-drag block w-[358px] h-auto object-cover lg:w-[630px]"
+              />
+            </div>
+
+            <!-- about intro desc -->
+            <div class="mt-4 pt-5 lg:basis-[51%] lg:mt-8 lg:ml-5 lg:p-0">
+              <!-- Border-top -->
+              <div
+                class="rounded-tl-2xl rounded-tr-2xl border border-[#1C1C21] p-6 lg:p-7 xl:p-10"
+              >
+                <!-- Block heading -->
+                <div class="flex gap-x-1">
+                  <img
+                    src="./assets/icons/icon-heading.svg"
+                    alt="icon on heading"
+                    class="w-[23px] h-auto object-cover lg:w-[30px] xl:w-[40px]"
+                  />
+                  <h2
+                    class="text-xl text-[#CACACE] font-medium lg:text-2xl xl:text-3xl"
+                  >
+                    Introduction
+                  </h2>
+                </div>
+                <p
+                  class="mt-3 text-sm font-normal text-[#AFB0B6] leading-normal lg:text-base"
+                >
+                  My journey as a photographer has been a lifelong quest to
+                  capture the extraordinary in the ordinary, to freeze fleeting
+                  moments in time, and to share the world's beauty as I see it.
+                  Based in the enchanting landscapes of the USA, I find
+                  inspiration in every corner of this diverse and vibrant
+                  country. Join me as we embark on a visual odyssey, where each
+                  photograph tells a story, and every frame is a piece of my
+                  heart.
+                </p>
+              </div>
+
+              <!-- Border-bottom -->
+              <div
+                class="rounded-bl-2xl rounded-br-2xl border border-[#1C1C21] p-6 lg:p-7 xl:p-10"
+              >
+                <!-- Block heading -->
+                <div class="flex gap-x-1">
+                  <img
+                    src="./assets/icons/icon-heading.svg"
+                    alt="icon on heading"
+                    class="w-[23px] h-auto object-cover lg:w-[30px] xl:w-[40px]"
+                  />
+                  <h2
+                    class="text-xl text-[#CACACE] font-medium lg:text-2xl xl:text-3xl"
+                  >
+                    Contact Information
+                  </h2>
+                </div>
+
+                <!-- Info contact -->
+                <div class="mt-5 xl:mt-10">
+                  <div class="lg:flex lg:gap-x-4 xl:g-0">
+                    <!-- Email -->
                     <div
-                        class="mt-5 text-[28px] text-white uppercase font-semibold lg:mt-12 xl:mt-15 lg:text-5xl xl:text-[58px]">
-                        <div class="flex items-center gap-2 xl:gap-x-3">
-                            <span>Let’s</span>
-                            <span
-                                class="flex items-center py-4 px-8 bg-[#4A2CED] rounded-[100px] shadow-[inset_4px_4px_17.4px_0px_#FFFFFF47] lg:px-7 lg:py-3">
-                                <img src="./assets/icons/icon-arrow.svg" alt="icon arrow"
-                                    class="no-drag w-[20px] h-auto object-cover lg:w-6">
-                            </span>
+                      class="text-sm font-medium text-[#E4E4E6] leading-normal lg:text-base xl:basis-[50%]"
+                    >
+                      Email
+                      <a
+                        href="mailto:contact@nguyenthanhthien.com"
+                        class="block mt-[2px font-normal] text-[#AFB0B6]"
+                      >
+                        damienbraun@gmail.com
+                      </a>
+                    </div>
+                    <!-- Phone -->
+                    <div
+                      class="mt-3 text-sm font-medium text-[#E4E4E6] leading-normal lg:text-base lg:mt-0 xl:basis-[50%]"
+                    >
+                      Phone Number
+                      <a
+                        href="tel:0374215721"
+                        class="block mt-[2px font-normal] text-[#AFB0B6]"
+                      >
+                        0374 215 721
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Social contact-->
+                  <div
+                    class="flex flex-col mt-5 xl:flex-row xl:items-center xl:gap-x-15 xl:mt-10 xl:flex-row-reverse"
+                  >
+                    <div
+                      class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2"
+                    >
+                      <!-- Facebook -->
+                      <a
+                        href="#!"
+                        class="no-dragno-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                      >
+                        <div
+                          class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                        >
+                          <img
+                            src="./assets/icons/icon-facebook.svg"
+                            alt="Facebook icon"
+                            class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                          />
                         </div>
-                        <div class="mt-1 whitespace-nowrap xl:mt-3">
-                            Work Together
+                      </a>
+                      <!-- Twitter -->
+                      <a
+                        href="#!"
+                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                      >
+                        <div
+                          class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                        >
+                          <img
+                            src="./assets/icons/icon-x.svg"
+                            alt="X icon"
+                            class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                          />
                         </div>
+                      </a>
+                      <!-- Linkedin -->
+                      <a
+                        href="#!"
+                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                      >
+                        <div
+                          class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                        >
+                          <img
+                            src="./assets/icons/icon-linkedin.svg"
+                            alt="Linkedin icon"
+                            class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                          />
+                        </div>
+                      </a>
                     </div>
-                </div>
 
+                    <!-- contact btn -->
+                    <div
+                      class="flex flex-col mt-5 gap-y-4 lg:flex-row lg:mt-5 lg:gap-x-4 xl:mt-0 xl:gap-x-5"
+                    >
+                      <a
+                        href="#!"
+                        class="block border border-[#2B2B32] rounded-lg py-3 text-sm font-medium bg-[#1C1C21] text-center text-white leading-normal hover:opacity-80 transition-opacity lg:px-13 lg:whitespace-nowrap"
+                      >
+                        Let’s Work
+                      </a>
+                      <a
+                        href="#!"
+                        class="block border border-[#2B2B32] rounded-lg py-3 text-sm font-medium bg-[#1C1C21] text-center text-white leading-normal hover:opacity-80 transition-opacity lg:px-13 lg:whitespace-nowrap"
+                      >
+                        Download CV
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- #3 Service section -->
+      <section class="w-full mt-20 lg:mt-37 xl:mt-50">
+        <!-- Wrapper about -->
+        <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
+          <div
+            class="flex flex-col items-start border-b border-[#1C1C21] pb-5 lg:flex-row lg:items-center lg:justify-between lg:px-20 lg:pb-10 xl:px-10"
+          >
+            <h2 class="text-[28px] text-white uppercase">
+              <span
+                class="text-sm text-[#797C86] font-semibold lg:text-base xl:text-xl"
+              >
+                Services
+              </span>
+              <span
+                class="block font-semibold lg:mt-[2px] lg:text-5xl xl:text-[58px] xl:mt-1"
+                >My Photography Services</span
+              >
+            </h2>
+
+            <!-- Button node slide -->
+            <div class="flex items-center gap-x-5 xl:gap-x-7">
+              <div
+                class="hidden lg:flex lg:gap-x-3 lg:border lg:border-[#1C1C21] lg:rounded-full lg:p-2"
+              >
+                <button
+                  class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center"
+                >
+                  <img
+                    src="./assets/icons/arrown-slide.svg"
+                    alt="icon arrow"
+                    class="block w-[10px] h-[17px] object-cover shrink-0 cursor-pointer"
+                  />
+                </button>
+
+                <button
+                  class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer"
+                >
+                  <img
+                    src="./assets/icons/arrown-slide.svg"
+                    alt="icon arrown"
+                    class="block w-[10px] h-[17px] object-cover shrink-0 scale-x-[-1]"
+                  />
+                </button>
+              </div>
+
+              <!-- CTA -->
+              <a
+                href="#!"
+                class="flex justify-center items-center w-fit h-[49px] mt-5 border border-transparent rounded-lg bg-[#1C1C21] bg-gradient-to-b from-[#2F2F37] to-transparent text-sm text-white font-medium px-[1px] pt-[1px] pb-[0px] hover:opacity-80 transition-opacity lg:shrink-0 lg:mt-0"
+              >
+                <span
+                  class="min-h-full border border-transparent rounded-lg px-5 py-3 bg-[#1C1C21] xl:px-6 xl:py-4"
+                  >View All Services -></span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-[1597px] mx-auto mt-15 px-4 lg:px-20 xl:px-15">
+          <div
+            class="flex flex-col w-full h-auto object-cover lg:flex-row lg:flex-row-reverse lg:gap-x-10 xl:px-10 xl:gap-x-12"
+          >
+            <div class="lg:basis-[50%]">
+              <img
+                src="./assets/images/img-service-section.png"
+                alt="Service"
+                class="block w-full h-auto object-cover xl:rounded-bl-[100px]"
+              />
             </div>
 
-            <!-- Hero section--list -->
-            <div class="w-full flex  bg-[#0E0E10]">
+            <!-- text service -->
+            <div class="flex flex-col mt-7 lg:basis-[50%] lg:mt-0">
+              <div class="mt-5 xl:mt-15 lg:mt-0">
+                <div class="flex items-center gap-2 xl:gap-x-3 lg:text-8">
+                  <span
+                    class="text-[28px] text-[#797C86] uppercase font-semibold lg:text-[34px] xl:text-[44px]"
+                    >Events</span
+                  >
+                  <span
+                    class="flex items-center py-4 px-8 bg-[#4A2CED] rounded-[100px] shadow-[inset_4px_4px_17.4px_0px_#FFFFFF47] lg:px-10 lg:py-5"
+                  >
+                    <img
+                      src="./assets/icons/icon-arrow.svg"
+                      alt="icon arrow"
+                      class="no-drag w-[20px] h-auto object-cover lg:w-4"
+                    />
+                  </span>
+                </div>
+              </div>
+              <p
+                class="mt-3 text-sm font-normal text-[#AFB0B6] leading-normal lg:text-base lg:mt-4 xl:mt-5"
+              >
+                My journey as a photographer has been a lifelong quest to
+                capture the extraordinary in the ordinary, to freeze fleeting
+                moments in time, and to share the world's beauty as I see it.
+                Based in the enchanting landscapes of the USA, I find
+                inspiration in every corner of this diverse and vibrant country.
+                Join me as we embark on a visual odyssey, where each photograph
+                tells a story, and every frame is a piece of my heart.
+              </p>
+
+              <!-- List service -->
+              <h4
+                class="mt-7 text-[#CACACE] font-medium text-sm leading-normal lg:mt-10 lg:text-base xl:mt-12 xl:text-lg"
+              >
+                Service Highlights
+              </h4>
+              <!-- list item 1 -->
+              <div
+                class="flex items-center gap-x-1 mt-2 border border-[#1C1C21] rounded-lg p-2 lg:mt-4 xl:mt-5 xl:gap-x-2"
+              >
+                <img
+                  src="./assets/icons/icon-list-service.svg"
+                  alt="icon list"
+                  class="w-[30px] h-auto object-cover uppercase leading-normal xl:w-[40px]"
+                />
+                <p class="text-[#AFB0B6] font-normal">
+                  Coverage for weddings, parties, corporate functions, and more.
+                </p>
+              </div>
+              <!-- list item 2 -->
+              <div
+                class="flex items-center gap-x-1 mt-2 border border-[#1C1C21] rounded-lg p-2 lg:mt-[10px] xl:gap-x-2"
+              >
+                <img
+                  src="./assets/icons/icon-list-service.svg"
+                  alt="icon list"
+                  class="w-[30px] h-auto object-cover uppercase leading-normal xl:w-[40px]"
+                />
+                <p class="text-[#AFB0B6] font-normal">
+                  Skilled photographers who know how to seize the moment.
+                </p>
+              </div>
+              <!-- list item 3 -->
+              <div
+                class="flex items-center gap-x-1 mt-2 border border-[#1C1C21] rounded-lg p-2 xl:gap-x-2"
+              >
+                <img
+                  src="./assets/icons/icon-list-service.svg"
+                  alt="icon list"
+                  class="w-[30px] h-auto object-cover uppercase leading-normal xl:w-[40px]"
+                />
+                <p class="text-[#AFB0B6] font-normal">
+                  A mix of candid and posed shots for a comprehensive story.
+                </p>
+              </div>
+              <!-- list item 4 -->
+              <div
+                class="flex items-center gap-x-1 mt-2 border border-[#1C1C21] rounded-lg p-2 xl:gap-x-2"
+              >
+                <img
+                  src="./assets/icons/icon-list-service.svg"
+                  alt="icon list"
+                  class="w-[30px] h-auto object-cover uppercase leading-normal xl:w-[40px]"
+                />
+                <p class="text-[#AFB0B6] font-normal">
+                  Quick turnaround for you to relive the day's highlights.
+                </p>
+              </div>
+
+              <!-- Button node slide -->
+              <div
+                class="flex gap-x-3 mx-auto mt-10 border border-[#1C1C21] rounded-full p-2 lg:hidden"
+              >
+                <button
+                  class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity"
+                >
+                  <img
+                    src="./assets/icons/arrown-slide.svg"
+                    alt="icon arrown"
+                  />
+                </button>
+
+                <button
+                  class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity"
+                >
+                  <img
+                    src="./assets/icons/arrown-slide.svg"
+                    alt="icon arrown"
+                    class="scale-x-[-1]"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- #4 Porfolio section -->
+      <section class="w-full mt-20 lg:mt-37 xl:mt-50">
+        <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
+          <div
+            class="flex flex-col items-start border-b border-[#1C1C21] pb-5 lg:flex-row lg:items-center lg:justify-between lg:px-20 lg:pb-10 xl:px-10"
+          >
+            <h2 class="text-[28px] text-white uppercase">
+              <span
+                class="text-sm text-[#797C86] font-semibold lg:text-base xl:text-xl"
+              >
+                Portfolio
+              </span>
+              <span
+                class="block font-semibold lg:mt-[2px] lg:text-5xl xl:text-[58px] xl:mt-1"
+                >Explore My photography work.</span
+              >
+            </h2>
+
+            <!-- Button node slide -->
+            <div class="flex items-center gap-x-5 xl:gap-x-7">
+              <div
+                class="hidden lg:flex lg:gap-x-3 lg:border lg:border-[#1C1C21] lg:rounded-full lg:p-2"
+              >
+                <button
+                  class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer"
+                >
+                  <img
+                    src="./assets/icons/arrown-slide.svg"
+                    alt="icon arrow"
+                    class="block w-[10px] h-[17px] object-cover shrink-0"
+                  />
+                </button>
+
+                <button
+                  class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer"
+                >
+                  <img
+                    src="./assets/icons/arrown-slide.svg"
+                    alt="icon arrown"
+                    class="block w-[10px] h-[17px] object-cover shrink-0 scale-x-[-1]"
+                  />
+                </button>
+              </div>
+
+              <!-- CTA -->
+              <a
+                href="#!"
+                class="flex justify-center items-center w-fit h-[49px] mt-5 border border-transparent rounded-lg bg-[#1C1C21] bg-gradient-to-b from-[#2F2F37] to-transparent text-sm text-white font-medium px-[1px] pt-[1px] pb-[0px] hover:opacity-80 transition-opacity lg:shrink-0 lg:mt-0"
+              >
+                <span
+                  class="min-h-full border border-transparent rounded-lg px-5 py-3 bg-[#1C1C21] xl:px-6 xl:py-4"
+                  >View All Services -&gt;</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide img -->
+          <div
+            class="w-full flex mt-4 text-base text-[#CACACE] flex-nowrap mt-10 overflow-hidden lg:px-8 lg:gap-x-7 lg:mt-15 xl:px-10 xl:gap-x-12"
+          >
+            <!-- #1 slide -->
+            <div class="flex flex-col w-full shrink-0 lg:flex-1">
+              <img
+                src=" ./assets/images/porfolio-img.png"
+                alt="Faces of Resilience"
+                class="w-full h-[353px] rounded-2xl object-cover lg:w-[428px] lg:h-auto"
+              />
+              <div class="flex justify-between mt-4 items-start">
+                <div class="flex flex-col">
+                  <h4 class="text-[#CACACE] font-medium text-base xl:text-xl">
+                    Faces of Resilience
+                  </h4>
+                  <span class="text-[#797C86] text-sm font-normal xl:text-lg">
+                    March 2022
+                  </span>
+                </div>
+
+                <a
+                  href="#!"
+                  class="inline-flex items-center border-b border-[#2F2F37] text-[#F2F2F3] font-medium text-sm gap-x-[6px] uppercase xl:text-lg"
+                >
+                  View Project
+                  <img
+                    src="./assets/icons/icon-view-project.svg"
+                    alt="icon view"
+                    class="w-[20px] h-[20px] object-cover lg:w-[14px] lg:h-[14px]"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <!-- #2 slide -->
+            <div class="flex flex-col w-full lg:flex-1">
+              <img
+                src="./assets/images/porfolio-img-02.png"
+                alt="Faces of Resilience"
+                class="w-full h-[353px] rounded-2xl object-cover lg:w-[428px] lg:h-[428px]"
+              />
+              <div class="flex justify-between mt-4 items-start">
+                <div class="flex flex-col">
+                  <h4 class="text-[#CACACE] font-medium text-base xl:text-xl">
+                    A Wedding Tale
+                  </h4>
+                  <span class="text-[#797C86] text-sm font-normal xl:text-lg">
+                    March 2022
+                  </span>
+                </div>
+
+                <a
+                  href="#!"
+                  class="inline-flex items-center border-b border-[#2F2F37] text-[#F2F2F3] font-medium text-sm gap-x-[6px] uppercase xl:text-lg"
+                >
+                  View Project
+                  <img
+                    src="./assets/icons/icon-view-project.svg"
+                    alt="icon view"
+                    class="w-[20px] h-[20px] object-cover lg:w-[14px] lg:h-[14px]"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <!-- #3 slide -->
+            <div class="flex flex-col w-full lg:flex-1">
+              <img
+                src="./assets/images/porfolio-img-03.png"
+                alt="Faces of Resilience"
+                class="w-full h-[353px] rounded-2xl object-cover lg:w-[428px] lg:h-[428px]"
+              />
+              <div class="flex justify-between mt-4 items-start">
+                <div class="flex flex-col">
+                  <h4 class="text-[#CACACE] font-medium text-base xl:text-xl">
+                    Product Elegance
+                  </h4>
+                  <span class="text-[#797C86] text-sm font-normal xl:text-lg">
+                    March 2022
+                  </span>
+                </div>
+
+                <a
+                  href="#!"
+                  class="inline-flex items-center border-b border-[#2F2F37] text-[#F2F2F3] font-medium text-sm gap-x-[6px] uppercase xl:text-lg"
+                >
+                  View Project
+                  <img
+                    src="./assets/icons/icon-view-project.svg"
+                    alt="icon view"
+                    class="w-[20px] h-[20px] object-cover lg:w-[14px] lg:h-[14px]"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Button slide -->
+          <div
+            class="w-fit flex gap-x-3 mx-auto border border-[#1C1C21] rounded-full p-2 lg:hidden"
+          >
+            <button
+              class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity"
+            >
+              <img src="./assets/icons/arrown-slide.svg" alt="icon arrown" />
+            </button>
+
+            <button
+              class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity"
+            >
+              <img
+                src="./assets/icons/arrown-slide.svg"
+                alt="icon arrown"
+                class="scale-x-[-1]"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- #5 FAQ -->
+      <section class="w-full mt-20 lg:mt-37 xl:mt-50">
+        <div class="max-w-[1597px] mx-auto px-4 lg:px-20 xl:px-15">
+          <div
+            class="flex flex-col items-start border-b border-[#1C1C21] pb-5 lg:flex-row lg:items-center lg:justify-between lg:pb-10 xl:px-10"
+          >
+            <h2 class="text-[28px] text-white uppercase">
+              <span
+                class="text-sm text-[#797C86] font-semibold lg:text-base xl:text-xl"
+              >
+                FAQ’s
+              </span>
+              <span
+                class="block font-semibold lg:mt-[2px] lg:text-5xl xl:text-[58px] xl:mt-1"
+                >Frequently Asked Questions</span
+              >
+            </h2>
+          </div>
+
+          <!-- list FAQs -->
+          <div
+            class="flex flex-col lg:flex-row lg:divide-x lg:divide-[#1C1C21]"
+          >
+            <!-- Group FAQ -->
+            <div class="flex-1">
+              <div
+                class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15"
+              >
+                <div class="flex gap-x-7 items-center justify-between">
+                  <h4
+                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl"
+                  >
+                    What type of photography do you specialize in?
+                  </h4>
+                  <div
+                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon"
+                      class="w-[7px] h-auto object-contain rotate-90"
+                    />
+                  </div>
+                </div>
+
+                <p
+                  class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base xl:text-xl xl:w-[92%]"
+                >
+                  I specialize in [Portrait, Landscape, Event, etc.]
+                  photography, capturing moments that tell unique stories.
+                </p>
+              </div>
+              <!-- 2 -->
+              <div
+                class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15"
+              >
+                <div class="flex gap-x-7 items-center justify-between">
+                  <h4
+                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl"
+                  >
+                    How can I book a photography session with you?
+                  </h4>
+                  <div
+                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon"
+                      class="w-[7px] h-auto object-contain rotate-270"
+                    />
+                  </div>
+                </div>
+
+                <p
+                  class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base xl:text-xl hidden"
+                >
+                  I specialize in [Portrait, Landscape, Event, etc.]
+                  photography, capturing moments that tell unique stories.
+                </p>
+              </div>
+              <!-- 3 -->
+              <div
+                class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15"
+              >
+                <div class="flex gap-x-7 items-center justify-between">
+                  <h4
+                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl"
+                  >
+                    What equipment do you use for your photography?
+                  </h4>
+                  <div
+                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon"
+                      class="w-[7px] h-auto object-contain rotate-270"
+                    />
+                  </div>
+                </div>
+
+                <p
+                  class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base hidden"
+                >
+                  I specialize in [Portrait, Landscape, Event, etc.]
+                  photography, capturing moments that tell unique stories.
+                </p>
+              </div>
+              <!-- 4 -->
+              <div class="mt-5 px-6 py-5">
+                <div class="flex gap-x-7 items-center justify-between">
+                  <h4
+                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl"
+                  >
+                    Can I request a specific location for a
+                  </h4>
+                  <div
+                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon"
+                      class="w-[7px] h-auto object-contain rotate-270"
+                    />
+                  </div>
+                </div>
+
+                <p
+                  class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base hidden"
+                >
+                  I specialize in [Portrait, Landscape, Event, etc.]
+                  photography, capturing moments that tell unique stories.
+                </p>
+              </div>
+            </div>
+
+            <!-- Group FAQ -->
+            <div class="flex-1">
+              <div
+                class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15"
+              >
+                <div class="flex gap-x-7 items-center justify-between">
+                  <h4
+                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl"
+                  >
+                    What type of photography do you specialize in?
+                  </h4>
+                  <div
+                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon"
+                      class="w-[7px] h-auto object-contain rotate-90"
+                    />
+                  </div>
+                </div>
+
+                <p
+                  hidden
+                  class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base"
+                >
+                  I specialize in [Portrait, Landscape, Event, etc.]
+                  photography, capturing moments that tell unique stories.
+                </p>
+              </div>
+              <!-- 2 -->
+              <div
+                class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15"
+              >
+                <div class="flex gap-x-7 items-center justify-between">
+                  <h4
+                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl"
+                  >
+                    How can I book a photography session with you?
+                  </h4>
+                  <div
+                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon"
+                      class="w-[7px] h-auto object-contain rotate-270"
+                    />
+                  </div>
+                </div>
+
+                <p
+                  class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base hidden"
+                >
+                  I specialize in [Portrait, Landscape, Event, etc.]
+                  photography, capturing moments that tell unique stories.
+                </p>
+              </div>
+              <!-- 3 -->
+              <div
+                class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15"
+              >
+                <div class="flex gap-x-7 items-center justify-between">
+                  <h4
+                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl"
+                  >
+                    What equipment do you use for your photography?
+                  </h4>
+                  <div
+                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon"
+                      class="w-[7px] h-auto object-contain rotate-270"
+                    />
+                  </div>
+                </div>
+
+                <p
+                  class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base hidden"
+                >
+                  I specialize in [Portrait, Landscape, Event, etc.]
+                  photography, capturing moments that tell unique stories.
+                </p>
+              </div>
+              <!-- 4 -->
+              <div class="mt-5 px-6 py-5">
+                <div class="flex gap-x-7 items-center justify-between">
+                  <h4
+                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl"
+                  >
+                    Can I request a specific location for a
+                  </h4>
+                  <div
+                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon"
+                      class="w-[7px] h-auto object-contain rotate-270"
+                    />
+                  </div>
+                </div>
+
+                <p
+                  class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base hidden"
+                >
+                  I specialize in [Portrait, Landscape, Event, etc.]
+                  photography, capturing moments that tell unique stories.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- #6 Rating -->
+      <section class="w-full mt-20 lg:mt-37 xl:mt-50">
+        <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
+          <div class="border-b border-[#1C1C21] pb-5">
+            <!-- Heading -->
+            <div
+              class="flex flex-col items-start pb-5 lg:flex-row lg:items-end lg:justify-between lg:px-20 lg:pb-10 xl:px-10"
+            >
+              <h2 class="text-[28px] text-white uppercase">
+                <span
+                  class="text-sm text-[#797C86] font-semibold lg:text-base xl:text-xl"
+                >
+                  Testimonials
+                </span>
+                <span
+                  class="block font-semibold lg:mt-[2px] lg:text-5xl xl:text-[58px] xl:mt-1"
+                  >What My Clients Say</span
+                >
+                <!-- Total span -->
+                <div class="hidden lg:block lg:mt-4">
+                  <p
+                    class="text-[#62646C] text-sm font-normal lg:text-base xl:text-lg"
+                  >
+                    Total Reviews
+                  </p>
+                  <span
+                    class="block font-medium text-[#CACACE] text-xl mt-[2px] lg:text-2xl xl:text-[28px]"
+                  >
+                    323
+                  </span>
+                </div>
+              </h2>
+
+              <!-- Button node slide -->
+              <div class="flex items-center gap-x-5 xl:gap-x-7">
                 <div
-                    class="animate-marquee flex items-center gap-5 border-y border-[#1C1C21] py-4 whitespace-nowrap lg:gap-x-4 xl:py-7 xl:gap-x-5 ">
-                    <!-- item #1 -->
-                    <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                        <!-- icon -->
-                        <img src="./assets/icons/icon-brand.svg" alt="icon"
-                            class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                        <!-- text -->
-                        <span class="text-sm text-[#D6D0FB] xl:text-lg">Event Photography</span>
-                    </div>
-                    <!-- item #2 -->
-                    <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                        <!-- icon -->
-                        <img src="./assets/icons/icon-brand.svg" alt="icon"
-                            class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                        <!-- text -->
-                        <span class="text-sm text-[#D6D0FB] xl:text-lg">Comercial Photography</span>
-                    </div>
-                    <!-- item #3 -->
-                    <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                        <!-- icon -->
-                        <img src="./assets/icons/icon-brand.svg" alt="icon"
-                            class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                        <!-- text -->
-                        <span class="text-sm text-[#D6D0FB] xl:text-lg">Product Photography</span>
-                    </div>
-                    <!-- item #4 -->
-                    <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                        <!-- icon -->
-                        <img src="./assets/icons/icon-brand.svg" alt="icon"
-                            class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                        <!-- text -->
-                        <span class="text-sm text-[#D6D0FB] xl:text-lg">Wedding Photography</span>
-                    </div>
-                    <!-- item #5 -->
-                    <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                        <!-- icon -->
-                        <img src="./assets/icons/icon-brand.svg" alt="icon"
-                            class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                        <!-- text -->
-                        <span class="text-sm text-[#D6D0FB] xl:text-lg">Landscape Photography</span>
-                    </div>
-                    <!-- item #6 -->
-                    <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                        <!-- icon -->
-                        <img src="./assets/icons/icon-brand.svg" alt="icon"
-                            class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                        <!-- text -->
-                        <span class="text-sm text-[#D6D0FB] xl:text-lg">Branding Photography</span>
-                    </div>
-                    <!-- item #7 -->
-                    <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                        <!-- icon -->
-                        <img src="./assets/icons/icon-brand.svg" alt="icon"
-                            class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                        <!-- text -->
-                        <span class="text-sm text-[#D6D0FB] xl:text-lg">Portrait Photography</span>
-                    </div>
+                  class="hidden lg:flex lg:gap-x-3 lg:border lg:border-[#1C1C21] lg:rounded-full lg:p-2"
+                >
+                  <button
+                    class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon arrow"
+                      class="block w-[10px] h-[17px] object-cover shrink-0"
+                    />
+                  </button>
+
+                  <button
+                    class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer"
+                  >
+                    <img
+                      src="./assets/icons/arrown-slide.svg"
+                      alt="icon arrown"
+                      class="block w-[10px] h-[17px] object-cover shrink-0 scale-x-[-1]"
+                    />
+                  </button>
                 </div>
+                <!-- CTA -->
+                <a
+                  href="#!"
+                  class="flex justify-center items-center w-fit h-[49px] mt-5 border border-transparent rounded-lg bg-[#1C1C21] bg-gradient-to-b from-[#2F2F37] to-transparent text-sm text-white font-medium px-[1px] pt-[1px] pb-[0px] hover:opacity-80 transition-opacity lg:shrink-0 lg:mt-0 lg:text-sm xl:text-lg"
+                >
+                  <span
+                    class="min-h-full border border-transparent rounded-lg px-5 py-3 bg-[#1C1C21] xl:px-6 xl:py-4"
+                    >View All Services -&gt;</span
+                  >
+                </a>
+              </div>
             </div>
 
-            <!-- LCP image -->
-            <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
-                <div class="flex justify-center lg:px-20 xl:px-10">
-                    <img fetchpriority="high" loading="eager" src="./assets/images/lcp-hero-section.png"
-                        alt="Largest Contentful Paint" class="no-drag block w-full max-w-full h-auto object-cover">
-                </div>
+            <!-- Total span -->
+            <div class="mt-5 lg:hidden">
+              <p class="text-[#62646C] text-sm font-normal">Total Reviews</p>
+              <span class="block font-medium text-[#CACACE] text-xl mt-[2px]">
+                323
+              </span>
             </div>
-        </section>
-
-        <!-- #2 about section -->
-        <section class="w-full mt-20 lg:mt-37 xl:mt-50">
-            <!-- Wrapper about -->
-            <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
-                <!-- about header -->
+          </div>
+          <!-- Slide rating -->
+          <div
+            class="flex flex-nowrap overflow-hidden lg:grid lg:grid-cols-3 lg:gap-x-[50px] lg:mt-15 xl:mt-20 xl:px-10"
+          >
+            <!-- box #1 -->
+            <div
+              class="min-w-full mt-10 border border-[#1C1C21] rounded-[10px] p-6 bg-[url('./assets/images/background-rating-box.svg')] bg-no-repeat bg-cover flex-1 shrink-0 lg:min-w-0"
+            >
+              <!-- heading box -->
+              <div class="flex justify-between items-center">
+                <div class="flex flex-col">
+                  <h5
+                    class="text-[#E4E4E6] font-semibold text-base lg:text-lg xl:text-xl"
+                  >
+                    Emily Johnson
+                  </h5>
+                  <span class="block text-[#62646C] font-normal text-sm">
+                    USA, California
+                  </span>
+                </div>
+                <!-- Social list -->
                 <div
-                    class="flex flex-col border-b border-[#1C1C21] pb-5 lg:flex-row lg:justify-between lg:px-20 lg:pb-10 xl:px-10">
-                    <h2 class="text-[28px] text-white uppercase">
-                        <span class="text-sm text-[#797C86] font-semibold lg:text-lg xl:text-xl">
-                            about
-                        </span>
-                        <span class="block font-semibold lg:mt-[2px] lg:text-5xl xl:text-[58px]">I am Damien</span>
-                    </h2>
-
-                    <!-- CTA -->
-                    <a href="#!"
-                        class="flex justify-center items-center w-fit h-[49px] mt-5 border border-transparent rounded-lg bg-[#1C1C21] bg-gradient-to-b from-[#2F2F37] to-transparent text-sm text-white font-medium px-[1px] pt-[1px] pb-[0px] hover:opacity-80 transition-opacity ">
-                        <span
-                            class="min-h-full border border-transparent rounded-lg px-5 py-3 bg-[#1C1C21] xl:px-6 xl:py-4">Know
-                            More -></span>
+                  class="flex flex-col xl:flex-row xl:items-center xl:gap-x-15 xl:mt-10 xl:flex-row-reverse"
+                >
+                  <div
+                    class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2"
+                  >
+                    <!-- Facebook -->
+                    <a
+                      href="#!"
+                      class="no-dragno-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                    >
+                      <div
+                        class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                      >
+                        <img
+                          src="./assets/icons/icon-facebook.svg"
+                          alt="Facebook icon"
+                          class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                        />
+                      </div>
                     </a>
+                    <!-- Twitter -->
+                    <a
+                      href="#!"
+                      class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                    >
+                      <div
+                        class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                      >
+                        <img
+                          src="./assets/icons/icon-x.svg"
+                          alt="X icon"
+                          class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                        />
+                      </div>
+                    </a>
+                    <!-- Linkedin -->
+                    <a
+                      href="#!"
+                      class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                    >
+                      <div
+                        class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                      >
+                        <img
+                          src="./assets/icons/icon-linkedin.svg"
+                          alt="Linkedin icon"
+                          class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                        />
+                      </div>
+                    </a>
+                  </div>
                 </div>
-
-                <!-- Inner -->
-                <div class="md:flex md:gap-x-5  lg:flex lg:px-20 lg:pt-15 xl:px-10">
-                    <!-- about bottom -->
-                    <div class="sm:flex sm:shrink-0 md:block md:shrink-0 mt-10 lg:basis-[49%] lg:mt-0 lg:px-0">
-                        <img src="./assets/images/about-img.png" alt="about image"
-                            class="no-drag min-w-full block grow-1 w-[358px] h-auto object-cover lg:w-[630px]">
-                    </div>
-
-                    <!-- about intro desc -->
-                    <div class="mt-4 pt-5 lg:basis-[51%] lg:mt-8 lg:ml-5 lg:p-0">
-                        <!-- Border-top -->
-                        <div class="rounded-tl-2xl rounded-tr-2xl border border-[#1C1C21] p-6 lg:p-7 xl:p-10">
-                            <!-- Block heading -->
-                            <div class="flex gap-x-1">
-                                <img src="./assets/icons/icon-heading.svg" alt="icon on heading"
-                                    class="w-[23px] h-auto object-cover md:w-[30px] lg:w-[30px] xl:w-[40px]">
-                                <h2 class="text-xl text-[#CACACE] font-medium md:text-2xl lg:text-2xl xl:text-3xl ">
-                                    Introduction
-                                </h2>
-                            </div>
-                            <p class="mt-3 text-sm font-normal text-[#AFB0B6] leading-normal lg:text-lg lg:mt-5">
-                                My journey as a photographer has been a lifelong quest to capture the extraordinary in
-                                the
-                                ordinary, to freeze fleeting moments in time, and to share the world's beauty as I see
-                                it.
-                                Based
-                                in the enchanting landscapes of the USA, I find inspiration in every corner of this
-                                diverse
-                                and
-                                vibrant country. Join me as we embark on a visual odyssey, where each photograph tells a
-                                story,
-                                and every frame is a piece of my heart.
-                            </p>
-                        </div>
-
-                        <!-- Border-bottom -->
-                        <div class="rounded-bl-2xl rounded-br-2xl border border-[#1C1C21] p-6 lg:p-7 xl:p-10">
-                            <!-- Block heading -->
-                            <div class="flex gap-x-1">
-                                <img src="./assets/icons/icon-heading.svg" alt="icon on heading"
-                                    class="w-[23px] h-auto object-cover md:w-[30px] lg:w-[30px] xl:w-[40px]">
-                                <h2 class="text-xl text-[#CACACE] font-medium md:text-2xl lg:text-2xl xl:text-3xl ">
-                                    Contact Information
-                                </h2>
-                            </div>
-
-                            <!-- Info contact -->
-                            <div class="mt-5 xl:mt-10">
-                                <div class="lg:flex lg:gap-x-4 xl:gap-x-5">
-                                    <!-- Email -->
-                                    <div
-                                        class="text-sm font-medium text-[#E4E4E6] leading-normal lg:text-base xl:basis-[50%] xl:text-lg">
-                                        Email
-                                        <a href="mailto:contact@nguyenthanhthien.com"
-                                            class="block mt-[2px font-normal] text-[#AFB0B6] xl:text-xl">
-                                            contact@nguyenthanhthien.com
-                                        </a>
-                                    </div>
-                                    <!-- Phone -->
-                                    <div
-                                        class="mt-3 text-sm font-medium text-[#E4E4E6] leading-normal lg:text-base lg:mt-0 xl:basis-[50%] xl:text-lg">
-                                        Phone Number
-                                        <a href="tel:0374215721"
-                                            class="block mt-[2px font-normal] text-[#AFB0B6] xl:text-xl">
-                                            0374 215 721
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Social contact-->
-                                <div
-                                    class="flex flex-col mt-5 xl:flex-row xl:items-center xl:gap-x-15  xl:mt-10 xl:flex-row-reverse ">
-                                    <div
-                                        class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2">
-                                        <!-- Facebook -->
-                                        <a href="#!"
-                                            class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                            <div
-                                                class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                                <img src="./assets/icons/icon-facebook.svg" alt="Facebook icon"
-                                                    class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                            </div>
-                                        </a>
-                                        <!-- Twitter -->
-                                        <a href="#!"
-                                            class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                            <div
-                                                class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                                <img src="./assets/icons/icon-x.svg" alt="X icon"
-                                                    class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                            </div>
-                                        </a>
-                                        <!-- Linkedin -->
-                                        <a href="#!"
-                                            class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                            <div
-                                                class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                                <img src="./assets/icons/icon-linkedin.svg" alt="Linkedin icon"
-                                                    class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                            </div>
-                                        </a>
-
-                                    </div>
-
-                                    <!-- contact btn -->
-                                    <div
-                                        class="flex flex-col mt-5 gap-y-4 lg:flex-row lg:mt-5 lg:gap-x-4 xl:mt-0 xl:gap-x-5">
-                                        <a href="#!"
-                                            class="block border border-[#2B2B32] rounded-lg py-3 text-sm font-medium bg-[#1C1C21] text-center text-white leading-normal hover:opacity-80 transition-opacity lg:px-13 lg:whitespace-nowrap xl:text-lg">
-                                            Let’s Work
-                                        </a>
-                                        <a href="#!"
-                                            class="block border border-[#2B2B32] rounded-lg py-3 text-sm font-medium bg-[#1C1C21] text-center text-white leading-normal hover:opacity-80 transition-opacity lg:px-13 lg:whitespace-nowrap xl:text-lg">
-                                            Download CV
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- #3 Service section -->
-        <section class="w-full mt-20 lg:mt-37 xl:mt-50" id="services section">
-            <!-- Wrapper about -->
-            <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
-                <div
-                    class="flex flex-col items-start border-b border-[#1C1C21] pb-5 lg:flex-row lg:items-center lg:justify-between lg:px-20 lg:pb-10 xl:px-10">
-                    <h2 class="text-[28px] text-white uppercase">
-                        <span class="text-sm text-[#797C86] font-semibold lg:text-base xl:text-xl">
-                            Services
-                        </span>
-                        <span class="block font-semibold lg:mt-[2px] md:text-5xl lg:text-5xl xl:text-[58px] xl:mt-1">My
-                            Photography
-                            Services</span>
-                    </h2>
-
-                    <!-- Button node slide -->
-                    <div class="flex items-center gap-x-5 xl:gap-x-7">
-                        <div class="hidden lg:flex lg:gap-x-3  lg:border lg:border-[#1C1C21] lg:rounded-full lg:p-2">
-                            <button
-                                class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center">
-                                <img src="./assets/icons/arrown-slide.svg" alt="icon arrow"
-                                    class="block w-[10px] h-[17px] object-cover shrink-0 cursor-pointer">
-                            </button>
-
-                            <button
-                                class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer">
-                                <img src="./assets/icons/arrown-slide.svg" alt="icon arrown"
-                                    class="block w-[10px] h-[17px] object-cover shrink-0 scale-x-[-1]">
-                            </button>
-                        </div>
-
-                        <!-- CTA -->
-                        <a href="#!"
-                            class="flex justify-center items-center w-fit h-[49px] mt-5 border border-transparent rounded-lg bg-[#1C1C21] bg-gradient-to-b from-[#2F2F37] to-transparent text-sm text-white font-medium px-[1px] pt-[1px] pb-[0px] hover:opacity-80 transition-opacity lg:shrink-0 lg:mt-0">
-                            <span
-                                class="min-h-full border border-transparent rounded-lg px-5 py-3 bg-[#1C1C21] xl:px-6 xl:py-4">View
-                                All Services -></span>
-                        </a>
-                    </div>
-                </div>
+              </div>
+              <!-- Rating -->
+              <img
+                src="./assets/icons/rating-5-start.svg"
+                alt="rating 5 start"
+                class="mt-5 w-[116px] h-[20px] object-cover"
+              />
+              <!-- Description -->
+              <p
+                class="mt-5 text-base font-medium text-[#E4E4E6] leading-normal lg:text-lg xl:text-xl"
+              >
+                Damien's photography doesn't just capture moments; it captures
+                emotions. Hes work is simply mesmerizing.
+              </p>
             </div>
 
-            <div class="max-w-[1597px] mx-auto mt-15 px-4 lg:px-20 xl:px-15">
+            <!-- box #2 -->
+            <div
+              class="min-w-full mt-10 border border-[#1C1C21] rounded-[10px] p-6 bg-[url('./assets/images/background-rating-box.svg')] bg-no-repeat bg-cover lg:flex-1 lg:min-w-0"
+            >
+              <!-- heading box -->
+              <div class="flex justify-between items-center">
+                <div class="flex flex-col">
+                  <h5
+                    class="text-[#E4E4E6] font-semibold text-base lg:text-lg xl:text-xl"
+                  >
+                    John Smith
+                  </h5>
+                  <span class="block text-[#62646C] font-normal text-sm">
+                    USA, California
+                  </span>
+                </div>
+                <!-- Social list -->
                 <div
-                    class="flex md:flex-row md:gap-x-10 md:flex-row-reverse flex-col w-full h-auto object-cover lg:flex-row lg:flex-row-reverse lg:gap-x-10 xl:px-10 xl:gap-x-12 ">
-                    <div class="md:flex-1 lg:basis-[50%]">
-                        <img src="./assets/images/img-service-section.png" alt="Service"
-                            class=" block w-full h-auto object-cover sm:rounded-tl-3 rounded-tr-3 rounded-br-7 rounded-bl-7 md:rounded-tl-5 rounded-tr-5 rounded-br-5 rounded-bl-[100px] xl:rounded-bl-[100px]">
-                    </div>
-
-                    <!-- text service -->
-                    <div class="flex mt-7 md:flex-1 flex-col md:mt-0 lg:basis-[50%] lg:mt-0">
-                        <div class="xl:mt-15 lg:mt-0">
-                            <div class="flex items-center gap-2 xl:gap-x-3 lg:text-8">
-                                <span
-                                    class="text-[28px] text-[#797C86] uppercase font-semibold lg:text-[34px] xl:text-[44px]">Events</span>
-                                <span
-                                    class="flex items-center py-4 px-8 bg-[#4A2CED] rounded-[100px] shadow-[inset_4px_4px_17.4px_0px_#FFFFFF47] lg:px-10 lg:py-5">
-                                    <img src="./assets/icons/icon-arrow.svg" alt="icon arrow"
-                                        class="no-drag w-[20px] h-auto object-cover lg:w-4">
-                                </span>
-                            </div>
-                        </div>
-                        <p class="mt-3 text-sm font-normal text-[#AFB0B6] leading-normal lg:text-lg lg:mt-4 xl:mt-5">
-                            My journey as a photographer has been a lifelong quest to capture the extraordinary in
-                            the
-                            ordinary, to freeze fleeting moments in time, and to share the world's beauty as I see
-                            it.
-                            Based
-                            in the enchanting landscapes of the USA, I find inspiration in every corner of this
-                            diverse
-                            and
-                            vibrant country. Join me as we embark on a visual odyssey, where each photograph tells a
-                            story,
-                            and every frame is a piece of my heart.
-                        </p>
-
-                        <!-- List service -->
-                        <h4
-                            class="mt-7 text-[#CACACE] font-medium text-sm leading-normal lg:mt-10 lg:text-base xl:mt-12 xl:text-lg">
-                            Service Highlights
-                        </h4>
-                        <!-- list item 1 -->
-                        <div
-                            class="flex items-center gap-x-1 mt-2 border border-[#1C1C21] rounded-lg p-2 lg:mt-4 xl:mt-5 lg:py-4 lg:px-5 xl:gap-x-2">
-                            <img src="./assets/icons/icon-list-service.svg" alt="icon list"
-                                class="w-[30px] h-auto object-cover uppercase leading-normal xl:w-[40px]">
-                            <p class="text-[#AFB0B6] font-normal lg:text-lg lg:gap-x-[10px]">Coverage
-                                for weddings,
-                                parties, corporate
-                                functions,
-                                and more.</p>
-                        </div>
-                        <!-- list item 2 -->
-                        <div
-                            class="flex items-center gap-x-1 mt-2 border border-[#1C1C21] rounded-lg p-2 lg:mt-[10px] lg:py-4 lg:px-5 xl:gap-x-2">
-                            <img src="./assets/icons/icon-list-service.svg" alt="icon list"
-                                class="w-[30px] h-auto object-cover uppercase leading-normal xl:w-[40px]">
-                            <p class="text-[#AFB0B6] font-normal lg:text-lg lg:gap-x-[10px]">Skilled
-                                photographers who
-                                know how to seize
-                                the
-                                moment.</p>
-                        </div>
-                        <!-- list item 3 -->
-                        <div
-                            class="flex items-center gap-x-1 mt-2 border border-[#1C1C21] rounded-lg p-2 lg:py-4 lg:px-5 xl:gap-x-2">
-                            <img src="./assets/icons/icon-list-service.svg" alt="icon list"
-                                class="w-[30px] h-auto object-cover uppercase leading-normal xl:w-[40px]">
-                            <p class="text-[#AFB0B6] font-normal lg:text-lg lg:gap-x-[10px]">A mix of
-                                candid and posed
-                                shots for a
-                                comprehensive
-                                story.</p>
-                        </div>
-                        <!-- list item 4 -->
-                        <div
-                            class="flex items-center gap-x-1 mt-2 border border-[#1C1C21] rounded-lg p-2 lg:py-4 lg:px-5 xl:gap-x-2">
-                            <img src="./assets/icons/icon-list-service.svg" alt="icon list"
-                                class="w-[30px] h-auto object-cover uppercase leading-normal xl:w-[40px]">
-                            <p class="text-[#AFB0B6] font-normal lg:text-lg lg:gap-x-[10px]">Quick
-                                turnaround for you to
-                                relive the
-                                day's
-                                highlights.</p>
-                        </div>
-
-                        <!-- Button node slide -->
-                        <div class="flex gap-x-3 mx-auto mt-10 border border-[#1C1C21] rounded-full p-2 lg:hidden">
-                            <button
-                                class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity">
-                                <img src="./assets/icons/arrown-slide.svg" alt="icon arrown">
-                            </button>
-
-                            <button
-                                class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity">
-                                <img src="./assets/icons/arrown-slide.svg" alt="icon arrown" class="scale-x-[-1]">
-                            </button>
-                        </div>
-                    </div>
+                  class="flex flex-col xl:flex-row xl:items-center xl:gap-x-15 xl:mt-10 xl:flex-row-reverse"
+                >
+                  <div
+                    class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2"
+                  >
+                    <!-- Facebook -->
+                    <a
+                      href="#!"
+                      class="no-dragno-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                    >
+                      <div
+                        class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                      >
+                        <img
+                          src="./assets/icons/icon-facebook.svg"
+                          alt="Facebook icon"
+                          class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                        />
+                      </div>
+                    </a>
+                    <!-- Twitter -->
+                    <a
+                      href="#!"
+                      class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                    >
+                      <div
+                        class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                      >
+                        <img
+                          src="./assets/icons/icon-x.svg"
+                          alt="X icon"
+                          class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                        />
+                      </div>
+                    </a>
+                    <!-- Linkedin -->
+                    <a
+                      href="#!"
+                      class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                    >
+                      <div
+                        class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                      >
+                        <img
+                          src="./assets/icons/icon-linkedin.svg"
+                          alt="Linkedin icon"
+                          class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                        />
+                      </div>
+                    </a>
+                  </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- #4 Porfolio section -->
-        <section class="w-full mt-20 lg:mt-37 xl:mt-50">
-            <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
-                <div
-                    class="flex flex-col items-start border-b border-[#1C1C21] pb-5 lg:flex-row lg:items-center lg:justify-between lg:px-20 lg:pb-10 xl:px-10">
-                    <h2 class="text-[28px] text-white uppercase">
-                        <span class="text-sm text-[#797C86] font-semibold md:text-base lg:text-base xl:text-xl"
-                            id="porfolio section">
-                            Portfolio
-                        </span>
-                        <span
-                            class="block font-semibold md:text-5xl lg:mt-[2px] lg:text-5xl xl:text-[58px] xl:mt-1">Explore
-                            My
-                            photography work.</span>
-                    </h2>
-
-                    <!-- Button node slide -->
-                    <div class="flex items-center gap-x-5 xl:gap-x-7">
-                        <div class="hidden lg:flex lg:gap-x-3  lg:border lg:border-[#1C1C21] lg:rounded-full lg:p-2">
-                            <button
-                                class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer">
-                                <img src="./assets/icons/arrown-slide.svg" alt="icon arrow"
-                                    class="block w-[10px] h-[17px] object-cover shrink-0 ">
-                            </button>
-
-                            <button
-                                class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer">
-                                <img src="./assets/icons/arrown-slide.svg" alt="icon arrown"
-                                    class="block w-[10px] h-[17px] object-cover shrink-0 scale-x-[-1] ">
-                            </button>
-                        </div>
-
-                        <!-- CTA -->
-                        <a href="#!"
-                            class="flex justify-center items-center w-fit h-[49px] mt-5 border border-transparent rounded-lg bg-[#1C1C21] bg-gradient-to-b from-[#2F2F37] to-transparent text-sm text-white font-medium px-[1px] pt-[1px] pb-[0px] hover:opacity-80 transition-opacity lg:shrink-0 lg:mt-0">
-                            <span
-                                class="min-h-full border border-transparent rounded-lg px-5 py-3 bg-[#1C1C21] xl:px-6 xl:py-4">View
-                                All Services -&gt;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Slide img -->
-                <div
-                    class="w-full flex flex-nowrap overflow-hidden mt-10 text-base text-[#CACACE] gap-x-4 md:gap-x-5 lg:grid lg:grid-cols-3 lg:gap-x-7 lg:mt-15 lg:overflow-visible xl:px-10 xl:gap-x-12">
-
-                    <div class="flex flex-col min-w-full md:min-w-[calc(50%-20px)] lg:min-w-0">
-                        <img src="./assets/images/porfolio-img.png" alt="Faces of Resilience"
-                            class="w-full h-full rounded-2xl object-cover">
-                        <div class="flex justify-between mt-4 items-start">
-                            <div class="flex flex-col">
-                                <h4 class="text-[#CACACE] font-medium text-base xl:text-xl">
-                                    Faces of Resilience
-                                </h4>
-                                <span class="text-[#797C86] text-sm font-normal xl:text-lg">
-                                    March 2022
-                                </span>
-                            </div>
-
-                            <a href="#!"
-                                class="inline-flex items-center border-b border-[#2F2F37] text-[#F2F2F3] font-medium text-sm gap-x-[6px] uppercase xl:text-lg">
-                                View Project
-                                <img src="./assets/icons/icon-view-project.svg" alt="icon view"
-                                    class="w-[14px] h-auto object-cover lg:w-5">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col min-w-full md:min-w-[calc(50%-20px)] lg:min-w-0">
-                        <img src="./assets/images/porfolio-img-02.png" alt="A Wedding Tale"
-                            class="w-full h-full  rounded-2xl object-cover">
-                        <div class="flex justify-between mt-4 items-start">
-                            <div class="flex flex-col">
-                                <h4 class="text-[#CACACE] font-medium text-base xl:text-xl">
-                                    A Wedding Tale
-                                </h4>
-                                <span class="text-[#797C86] text-sm font-normal xl:text-lg">
-                                    March 2022
-                                </span>
-                            </div>
-
-                            <a href="#!"
-                                class="inline-flex items-center border-b border-[#2F2F37] text-[#F2F2F3] font-medium text-sm gap-x-[6px] uppercase xl:text-lg">
-                                View Project
-                                <img src="./assets/icons/icon-view-project.svg" alt="icon view"
-                                    class="w-[14px] h-auto object-cover lg:w-5">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col min-w-full md:min-w-[calc(50%-20px)] lg:min-w-0">
-                        <img src="./assets/images/porfolio-img-03.png" alt="Product Elegance"
-                            class="w-full h-full rounded-2xl object-cover">
-                        <div class="flex justify-between mt-4 items-start">
-                            <div class="flex flex-col">
-                                <h4 class="text-[#CACACE] font-medium text-base xl:text-xl">
-                                    Product Elegance
-                                </h4>
-                                <span class="text-[#797C86] text-sm font-normal xl:text-lg">
-                                    March 2022
-                                </span>
-                            </div>
-
-                            <a href="#!"
-                                class="inline-flex items-center border-b border-[#2F2F37] text-[#F2F2F3] font-medium text-sm gap-x-[6px] uppercase xl:text-lg">
-                                View Project
-                                <img src="./assets/icons/icon-view-project.svg" alt="icon view"
-                                    class="w-[14px] h-auto object-cover lg:w-5">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Button slide -->
-                <div class="w-fit flex gap-x-3 mx-auto border border-[#1C1C21] rounded-full p-2 md:mt-10 lg:hidden">
-                    <button
-                        class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity">
-                        <img src="./assets/icons/arrown-slide.svg" alt="icon arrown">
-                    </button>
-
-                    <button
-                        class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity">
-                        <img src="./assets/icons/arrown-slide.svg" alt="icon arrown" class="scale-x-[-1]">
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- #5 FAQ -->
-        <section class="w-full mt-20 lg:mt-37 xl:mt-50">
-            <div class="max-w-[1597px] mx-auto px-4 lg:px-20 xl:px-15">
-                <div
-                    class="flex flex-col items-start border-b border-[#1C1C21] pb-5 lg:flex-row lg:items-center lg:justify-between  lg:pb-10 xl:px-10">
-                    <h2 class="text-[28px] text-white uppercase">
-                        <span class="text-sm text-[#797C86] font-semibold lg:text-xl xl:text-xl">
-                            FAQ’s
-                        </span>
-                        <span class="block font-semibold md:text-5xl lg:mt-1 lg:text-[58px] xl:mt-1">Frequently
-                            Asked Questions</span>
-                    </h2>
-                </div>
-
-                <!-- list FAQs -->
-                <div class="flex flex-col lg:flex-row lg:divide-x lg:divide-[#1C1C21]">
-
-                    <div class="flex-1">
-
-                        <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15 relative">
-                            <input type="checkbox" id="faq-1" class="hidden peer" checked />
-
-                            <label for="faq-1"
-                                class="flex gap-x-7 items-center justify-between cursor-pointer peer-checked:[&_h4]:text-white peer-checked:[&_img]:-rotate-90">
-                                <h4
-                                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl transition-colors">
-                                    What type of photography do you specialize in?
-                                </h4>
-                                <div
-                                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon"
-                                        class="w-[7px] h-auto object-contain rotate-90 transition-transform duration-300">
-                                </div>
-                            </label>
-
-                            <div
-                                class="grid grid-rows-[0fr] opacity-0 peer-checked:grid-rows-[1fr] peer-checked:opacity-100 transition-all duration-300 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p
-                                        class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base xl:text-xl xl:w-[92%]">
-                                        I specialize in [Portrait, Landscape, Event, etc.] photography, capturing
-                                        moments that tell unique stories.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15 relative">
-                            <input type="checkbox" id="faq-2" class="hidden  peer" />
-
-                            <label for="faq-2"
-                                class="flex gap-x-7 items-center justify-between cursor-pointer peer-checked:[&_h4]:text-white peer-checked:[&_img]:-rotate-90">
-                                <h4
-                                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl transition-colors">
-                                    How can I book a photography session with you?
-                                </h4>
-                                <div
-                                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon"
-                                        class="w-[7px] h-auto object-contain rotate-90 transition-transform duration-300">
-                                </div>
-                            </label>
-
-                            <div
-                                class="grid grid-rows-[0fr] opacity-0 peer-checked:grid-rows-[1fr] peer-checked:opacity-100 transition-all duration-300 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p
-                                        class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base xl:text-xl">
-                                        You can book a session by contacting me through the form below or emailing me
-                                        directly at the provided address.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15 relative">
-                            <input type="checkbox" id="faq-3" class="hidden peer" />
-
-                            <label for="faq-3"
-                                class="flex gap-x-7 items-center justify-between cursor-pointer peer-checked:[&_h4]:text-white peer-checked:[&_img]:-rotate-90">
-                                <h4
-                                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl transition-colors">
-                                    What equipment do you use for your photography?
-                                </h4>
-                                <div
-                                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon"
-                                        class="w-[7px] h-auto object-contain rotate-90 transition-transform duration-300">
-                                </div>
-                            </label>
-
-                            <div
-                                class="grid grid-rows-[0fr] opacity-0 peer-checked:grid-rows-[1fr] peer-checked:opacity-100 transition-all duration-300 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base">
-                                        I use top-tier Canon and Sony mirrorless cameras along with a variety of
-                                        professional prime and zoom lenses to ensure the highest quality.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15 relative">
-                            <input type="checkbox" id="faq-4" class="hidden peer" />
-
-                            <label for="faq-4"
-                                class="flex gap-x-7 items-center justify-between cursor-pointer peer-checked:[&_h4]:text-white peer-checked:[&_img]:-rotate-90">
-                                <h4
-                                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl transition-colors">
-                                    Can I request a specific location for a shoot?
-                                </h4>
-                                <div
-                                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon"
-                                        class="w-[7px] h-auto object-contain rotate-90 transition-transform duration-300">
-                                </div>
-                            </label>
-
-                            <div
-                                class="grid grid-rows-[0fr] opacity-0 peer-checked:grid-rows-[1fr] peer-checked:opacity-100 transition-all duration-300 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base">
-                                        Absolutely! I love exploring new locations. Whether it's a bustling city street
-                                        or a quiet forest, we can make it work.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hidden lg:block flex-1">
-
-                        <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15 relative">
-                            <input type="checkbox" id="faq-5" class="hidden peer" />
-
-                            <label for="faq-5"
-                                class="flex gap-x-7 items-center justify-between cursor-pointer peer-checked:[&_h4]:text-white peer-checked:[&_img]:-rotate-90">
-                                <h4
-                                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl transition-colors">
-                                    What is your turnaround time for editing?
-                                </h4>
-                                <div
-                                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon"
-                                        class="w-[7px] h-auto object-contain rotate-90 transition-transform duration-300">
-                                </div>
-                            </label>
-
-                            <div
-                                class="grid grid-rows-[0fr] opacity-0 peer-checked:grid-rows-[1fr] peer-checked:opacity-100 transition-all duration-300 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base">
-                                        Typically, you will receive your fully edited gallery within 2-3 weeks after the
-                                        shoot date.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15 relative">
-                            <input type="checkbox" id="faq-6" class="hidden peer" />
-
-                            <label for="faq-6"
-                                class="flex gap-x-7 items-center justify-between cursor-pointer peer-checked:[&_h4]:text-white peer-checked:[&_img]:-rotate-90">
-                                <h4
-                                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl transition-colors">
-                                    Do you provide raw/unedited photos?
-                                </h4>
-                                <div
-                                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon"
-                                        class="w-[7px] h-auto object-contain rotate-90 transition-transform duration-300">
-                                </div>
-                            </label>
-
-                            <div
-                                class="grid grid-rows-[0fr] opacity-0 peer-checked:grid-rows-[1fr] peer-checked:opacity-100 transition-all duration-300 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base">
-                                        No, editing is half the magic of my photography process. I only deliver fully
-                                        finished, high-resolution JPEG files.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15 relative">
-                            <input type="checkbox" id="faq-7" class="hidden peer" />
-
-                            <label for="faq-7"
-                                class="flex gap-x-7 items-center justify-between cursor-pointer peer-checked:[&_h4]:text-white peer-checked:[&_img]:-rotate-90">
-                                <h4
-                                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl transition-colors">
-                                    How many photos will I receive?
-                                </h4>
-                                <div
-                                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon"
-                                        class="w-[7px] h-auto object-contain rotate-90 transition-transform duration-300">
-                                </div>
-                            </label>
-
-                            <div
-                                class="grid grid-rows-[0fr] opacity-0 peer-checked:grid-rows-[1fr] peer-checked:opacity-100 transition-all duration-300 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base">
-                                        It depends on the package you choose, but typically you can expect between 30 to
-                                        50 polished images per hour of shooting.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 border-b border-[#1C1C21] px-6 py-5 xl:px-12 xl:py-15 relative">
-                            <input type="checkbox" id="faq-8" class="hidden peer" />
-
-                            <label for="faq-8"
-                                class="flex gap-x-7 items-center justify-between cursor-pointer peer-checked:[&_h4]:text-white peer-checked:[&_img]:-rotate-90">
-                                <h4
-                                    class="text-[#AFB0B6] font-semibold text-base uppercase lg:text-lg xl:text-xl transition-colors">
-                                    What happens if it rains on the shoot day?
-                                </h4>
-                                <div
-                                    class="flex items-center justify-center border border-[#1C1C21] rounded-full w-9 h-9 shrink-0">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon"
-                                        class="w-[7px] h-auto object-contain rotate-90 transition-transform duration-300">
-                                </div>
-                            </label>
-
-                            <div
-                                class="grid grid-rows-[0fr] opacity-0 peer-checked:grid-rows-[1fr] peer-checked:opacity-100 transition-all duration-300 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="mt-5 text-sm font-normal text-[#797C86] leading-normal lg:text-base">
-                                        We can either embrace the weather for some moody shots (with umbrellas!), find
-                                        an indoor location, or reschedule to the nearest available date.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+              </div>
+              <!-- Rating -->
+              <img
+                src="./assets/icons/rating-5-start.svg"
+                alt="rating 5 start"
+                class="mt-5 w-[116px] h-[20px] object-cover"
+              />
+              <!-- Description -->
+              <p
+                class="mt-5 text-base font-medium text-[#E4E4E6] leading-normal lg:text-lg xl:text-xl"
+              >
+                Damien has an incredible talent for making every event feel
+                effortless, and the results speak for themselves.
+              </p>
             </div>
 
-        </section>
-
-        <!-- #6 Rating -->
-        <section class="w-full mt-20 lg:mt-37 xl:mt-50">
-            <div class="max-w-[1597px] mx-auto px-4 xl:px-15">
-                <div class="border-b border-[#1C1C21] pb-5">
-                    <!-- Heading -->
-                    <div
-                        class="flex flex-col items-start  pb-5 lg:flex-row lg:items-end lg:justify-between lg:px-20 lg:pb-10 xl:px-10">
-                        <h2 class="text-[28px] text-white uppercase">
-                            <span class="text-sm text-[#797C86] font-semibold lg:text-xl xl:text-xl">
-                                Testimonials
-                            </span>
-                            <span class="block font-semibold md:text-5xl lg:mt-1 lg:text-[58px]">What My
-                                Clients
-                                Say</span>
-                            <!-- Total span -->
-                            <div class="hidden lg:block lg:mt-4">
-                                <p class="text-[#62646C] text-sm font-normal lg:text-lg xl:text-lg">Total Reviews</p>
-                                <span
-                                    class="block font-medium text-[#CACACE] text-xl mt-[2px] lg:text-[28px] xl:text-[28px]">
-                                    323
-                                </span>
-                            </div>
-                        </h2>
-
-                        <!-- Button node slide -->
-                        <div class="flex items-center gap-x-5 xl:gap-x-7">
-                            <div
-                                class="hidden lg:flex lg:gap-x-3  lg:border lg:border-[#1C1C21] lg:rounded-full lg:p-2">
-                                <button
-                                    class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon arrow"
-                                        class="block w-[10px] h-[17px] object-cover shrink-0 ">
-                                </button>
-
-                                <button
-                                    class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity flex items-center justify-center cursor-pointer">
-                                    <img src="./assets/icons/arrown-slide.svg" alt="icon arrown"
-                                        class="block w-[10px] h-[17px] object-cover shrink-0 scale-x-[-1] ">
-                                </button>
-                            </div>
-                            <!-- CTA -->
-                            <a href="#!"
-                                class="flex justify-center items-center w-fit h-[49px] mt-5 border border-transparent rounded-lg bg-[#1C1C21] bg-gradient-to-b from-[#2F2F37] to-transparent text-sm text-white font-medium px-[1px] pt-[1px] pb-[0px] hover:opacity-80 transition-opacity lg:shrink-0 lg:mt-0 lg:text-sm xl:text-lg">
-                                <span
-                                    class="min-h-full border border-transparent rounded-lg px-5 py-3 bg-[#1C1C21] xl:px-6 xl:py-4">View
-                                    All Services -&gt;</span>
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- Total span -->
-                    <div class="mt-5 lg:hidden">
-                        <p class="text-[#62646C] text-sm font-normal">Total Reviews</p>
-                        <span class="block font-medium text-[#CACACE] text-xl mt-[2px]">
-                            323
-                        </span>
-                    </div>
+            <!-- box #3 -->
+            <div
+              class="min-w-full mt-10 border border-[#1C1C21] rounded-[10px] p-6 bg-[url('./assets/images/background-rating-box.svg')] bg-no-repeat bg-cover lg:flex-1 lg:min-w-0"
+            >
+              <!-- heading box -->
+              <div class="flex justify-between items-center">
+                <div class="flex flex-col">
+                  <h5
+                    class="text-[#E4E4E6] font-semibold text-base lg:text-lg xl:text-xl"
+                  >
+                    Samantha Davis
+                  </h5>
+                  <span class="block text-[#62646C] font-normal text-sm">
+                    USA, California
+                  </span>
                 </div>
-                <!-- Slide rating -->
+                <!-- Social list -->
                 <div
-                    class="flex flex-nowrap overflow-hidden lg:grid lg:grid-cols-3 lg:gap-x-[50px] lg:mt-15 xl:mt-20 xl:px-10">
-                    <!-- box #1 -->
-                    <div
-                        class="min-w-full mt-10 border border-[#1C1C21] rounded-[10px] p-6 bg-[url('./assets/images/background-rating-box.svg')] bg-no-repeat bg-cover flex-1 shrink-0 lg:min-w-0">
-                        <!-- heading box -->
-                        <div class="flex justify-between items-center">
-                            <div class="flex flex-col">
-                                <h5 class="text-[#E4E4E6] font-semibold text-base lg:text-lg xl:text-xl">
-                                    Emily Johnson
-                                </h5>
-                                <span class="block text-[#62646C] font-normal text-sm">
-                                    USA, California
-                                </span>
-                            </div>
-                            <!-- Social list -->
-                            <div
-                                class="flex flex-col xl:flex-row xl:items-center xl:gap-x-15 xl:mt-10 xl:flex-row-reverse">
-                                <div
-                                    class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2">
-                                    <a href="#!"
-                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                        <div
-                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                            <img src="./assets/icons/icon-facebook.svg" alt="Facebook icon"
-                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                        </div>
-                                    </a>
-                                    <a href="#!"
-                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                        <div
-                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                            <img src="./assets/icons/icon-x.svg" alt="X icon"
-                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                        </div>
-                                    </a>
-                                    <a href="#!"
-                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                        <div
-                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                            <img src="./assets/icons/icon-linkedin.svg" alt="Linkedin icon"
-                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Rating -->
-                        <img src="./assets/icons/rating-5-start.svg" alt="rating 5 start"
-                            class="mt-5 w-[116px] h-[20px] object-cover">
-                        <!-- Description -->
-                        <p class="mt-5 text-base font-medium text-[#E4E4E6] leading-normal lg:text-lg xl:text-xl">
-                            Damien's photography doesn't just capture moments; it captures emotions. Hes work is simply
-                            mesmerizing.
-                        </p>
-                    </div>
-
-                    <!-- box #2 -->
-                    <div
-                        class="min-w-full mt-10 border border-[#1C1C21] rounded-[10px] p-6 bg-[url('./assets/images/background-rating-box.svg')] bg-no-repeat bg-cover lg:flex-1 lg:min-w-0">
-                        <!-- heading box -->
-                        <div class="flex justify-between items-center">
-                            <div class="flex flex-col">
-                                <h5 class="text-[#E4E4E6] font-semibold text-base lg:text-lg xl:text-xl">
-                                    John Smith
-                                </h5>
-                                <span class="block text-[#62646C] font-normal text-sm">
-                                    USA, California
-                                </span>
-                            </div>
-                            <!-- Social list -->
-                            <div
-                                class="flex flex-col xl:flex-row xl:items-center xl:gap-x-15 xl:mt-10 xl:flex-row-reverse">
-                                <div
-                                    class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2">
-                                    <a href="#!"
-                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                        <div
-                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                            <img src="./assets/icons/icon-facebook.svg" alt="Facebook icon"
-                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                        </div>
-                                    </a>
-                                    <a href="#!"
-                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                        <div
-                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                            <img src="./assets/icons/icon-x.svg" alt="X icon"
-                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                        </div>
-                                    </a>
-                                    <a href="#!"
-                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                        <div
-                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                            <img src="./assets/icons/icon-linkedin.svg" alt="Linkedin icon"
-                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Rating -->
-                        <img src="./assets/icons/rating-5-start.svg" alt="rating 5 start"
-                            class="mt-5 w-[116px] h-[20px] object-cover">
-                        <!-- Description -->
-                        <p class="mt-5 text-base font-medium text-[#E4E4E6] leading-normal lg:text-lg xl:text-xl">
-                            Damien has an incredible talent for making every event feel effortless, and the results
-                            speak for themselves.
-                        </p>
-                    </div>
-
-                    <!-- box #3 -->
-                    <div
-                        class="min-w-full mt-10 border border-[#1C1C21] rounded-[10px] p-6 bg-[url('./assets/images/background-rating-box.svg')] bg-no-repeat bg-cover lg:flex-1 lg:min-w-0">
-                        <!-- heading box -->
-                        <div class="flex justify-between items-center">
-                            <div class="flex flex-col">
-                                <h5 class="text-[#E4E4E6] font-semibold text-base lg:text-lg xl:text-xl">
-                                    Samantha Davis
-                                </h5>
-                                <span class="block text-[#62646C] font-normal text-sm">
-                                    USA, California
-                                </span>
-                            </div>
-                            <!-- Social list -->
-                            <div
-                                class="flex flex-col xl:flex-row xl:items-center xl:gap-x-15 xl:mt-10 xl:flex-row-reverse">
-                                <div
-                                    class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2">
-                                    <a href="#!"
-                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                        <div
-                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                            <img src="./assets/icons/icon-facebook.svg" alt="Facebook icon"
-                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                        </div>
-                                    </a>
-                                    <a href="#!"
-                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                        <div
-                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                            <img src="./assets/icons/icon-x.svg" alt="X icon"
-                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                        </div>
-                                    </a>
-                                    <a href="#!"
-                                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                                        <div
-                                            class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                                            <img src="./assets/icons/icon-linkedin.svg" alt="Linkedin icon"
-                                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Rating -->
-                        <img src="./assets/icons/rating-5-start.svg" alt="rating 5 start"
-                            class="mt-5 w-[116px] h-[20px] object-cover">
-                        <!-- Description -->
-                        <p class="mt-5 text-base font-medium text-[#E4E4E6] leading-normal lg:text-lg xl:text-xl">
-                            I was blown away by Damien's ability to capture the essence of our wedding day. Hes
-                            photographs are our memories.
-                        </p>
-                    </div>
+                  class="flex flex-col xl:flex-row xl:items-center xl:gap-x-15 xl:mt-10 xl:flex-row-reverse"
+                >
+                  <div
+                    class="inline-flex items-center justify-center self-start gap-x-2 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2"
+                  >
+                    <!-- Facebook -->
+                    <a
+                      href="#!"
+                      class="no-dragno-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                    >
+                      <div
+                        class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                      >
+                        <img
+                          src="./assets/icons/icon-facebook.svg"
+                          alt="Facebook icon"
+                          class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                        />
+                      </div>
+                    </a>
+                    <!-- Twitter -->
+                    <a
+                      href="#!"
+                      class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                    >
+                      <div
+                        class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                      >
+                        <img
+                          src="./assets/icons/icon-x.svg"
+                          alt="X icon"
+                          class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                        />
+                      </div>
+                    </a>
+                    <!-- Linkedin -->
+                    <a
+                      href="#!"
+                      class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+                    >
+                      <div
+                        class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+                      >
+                        <img
+                          src="./assets/icons/icon-linkedin.svg"
+                          alt="Linkedin icon"
+                          class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                        />
+                      </div>
+                    </a>
+                  </div>
                 </div>
-
-                <!-- Button slide -->
-                <div class="w-fit flex gap-x-3 mx-auto mt-12 border border-[#1C1C21] rounded-full p-2 lg:hidden ">
-                    <button
-                        class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity">
-                        <img src="./assets/icons/arrown-slide.svg" alt="icon arrown">
-                    </button>
-
-                    <button
-                        class=" border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity">
-                        <img src="./assets/icons/arrown-slide.svg" alt="icon arrown" class="scale-x-[-1]">
-                    </button>
-                </div>
+              </div>
+              <!-- Rating -->
+              <img
+                src="./assets/icons/rating-5-start.svg"
+                alt="rating 5 start"
+                class="mt-5 w-[116px] h-[20px] object-cover"
+              />
+              <!-- Description -->
+              <p
+                class="mt-5 text-base font-medium text-[#E4E4E6] leading-normal lg:text-lg xl:text-xl"
+              >
+                I was blown away by Damien's ability to capture the essence of
+                our wedding day. Hes photographs are our memories.
+              </p>
             </div>
-        </section>
+          </div>
+
+          <!-- Button slide -->
+          <div
+            class="w-fit flex gap-x-3 mx-auto mt-12 border border-[#1C1C21] rounded-full p-2 lg:hidden"
+          >
+            <button
+              class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity"
+            >
+              <img src="./assets/icons/arrown-slide.svg" alt="icon arrown" />
+            </button>
+
+            <button
+              class="border border-[#2F2F37] rounded-full px-5 py-4 bg-[#1C1C21] hover:opacity-80 transition-opacity"
+            >
+              <img
+                src="./assets/icons/arrown-slide.svg"
+                alt="icon arrown"
+                class="scale-x-[-1]"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
-
     <!--Footer  -->
-    <footer class=" w-full overflow-x-hidden pb-5 mt-20 lg:mt-37 xl:mt-50">
-        <!-- Footer TOP -->
-        <div class="max-w-[1597px] mx-auto">
-            <!-- Inner -->
-            <div class="px-4 pb-5 lg:px-20 lg:pb-15 xl:px-40 xl:pb-25 ">
-                <img class="no-drag block ml-auto w-[315px] h-auto object-cover lg:w-[846px] xl:w-[1050px]"
-                    src="./assets/images/bg-logo.png" alt="background logo">
-            </div>
+    <footer class="w-full overflow-x-hidden pb-5 mt-20 lg:mt-37 xl:mt-50">
+      <!-- Footer TOP -->
+      <div class="max-w-[1597px] mx-auto">
+        <!-- Inner -->
+        <div class="px-4 pb-5 lg:px-20 lg:pb-15 xl:px-40 xl:pb-25">
+          <img
+            class="no-drag block ml-auto w-[315px] h-auto object-cover lg:w-[846px] xl:w-[1050px]"
+            src="./assets/images/bg-logo.png"
+            alt="background logo"
+          />
         </div>
+      </div>
 
-        <!-- List Logo -->
-        <div class="w-full flex  bg-[#0E0E10]">
+      <!-- List Logo -->
+      <div class="w-full flex bg-[#0E0E10]">
+        <div
+          class="animate-marquee flex items-center gap-5 border-y border-[#1C1C21] py-4 whitespace-nowrap lg:gap-x-4 xl:py-7 xl:gap-x-5"
+        >
+          <!-- item #1 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Event Photography</span
+            >
+          </div>
+          <!-- item #2 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Comercial Photography</span
+            >
+          </div>
+          <!-- item #3 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Product Photography</span
+            >
+          </div>
+          <!-- item #4 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Wedding Photography</span
+            >
+          </div>
+          <!-- item #5 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Landscape Photography</span
+            >
+          </div>
+          <!-- item #6 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Branding Photography</span
+            >
+          </div>
+          <!-- item #7 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Portrait Photography</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer info -->
+      <div
+        class="relative max-w-[1597px] mx-auto border-b border-[#1C1C21] xl:before:content-[''] xl:before:absolute xl:before:top-[50%] xl:before:-translate-y-1/2 xl:before:left-[-100px] xl:before:w-[200px] xl:before:h-[200px] xl:before:bg-[#1C1C21] xl:before:[mask-image:url('./assets/images/icon-in-footer.png')] xl:before:[mask-size:contain] xl:before:[mask-position:center] xl:before:[mask-repeat:no-repeat] xl:after:content-[''] xl:after:absolute xl:after:top-[50%] xl:after:-translate-y-1/2 xl:after:right-[-100px] xl:after:w-[200px] xl:after:h-[200px] xl:after:bg-[#1C1C21] xl:after:[mask-image:url('./assets/images/icon-in-footer.png')] xl:after:[mask-size:contain] xl:after:[mask-position:center] xl:after:[mask-repeat:no-repeat] xl:after:-scale-x-100"
+      >
+        <!-- Wrapper -->
+        <div class="px-4 lg:flex xl:px-40">
+          <!-- Inner #1-->
+          <div
+            class="border-r border-l border-b border-[#1C1C21] px-4 py-10 lg:px-8 lg:py-20 xl:px-20 xl:py-25"
+          >
+            <h4
+              class="text-[#797C86] text-sm font-semibold uppercase lg:text-base xl:text-xl xl:whitespace-nowrap"
+            >
+              A more meaningful home for photography
+            </h4>
+
             <div
-                class="animate-marquee flex items-center gap-5 border-y border-[#1C1C21] py-4 whitespace-nowrap lg:gap-x-4 xl:py-7 xl:gap-x-5 ">
-                <!-- item #1 -->
-                <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                    <!-- icon -->
-                    <img src="./assets/icons/icon-brand.svg" alt="icon"
-                        class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                    <!-- text -->
-                    <span class="text-sm text-[#D6D0FB] xl:text-lg">Event Photography</span>
-                </div>
-                <!-- item #2 -->
-                <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                    <!-- icon -->
-                    <img src="./assets/icons/icon-brand.svg" alt="icon"
-                        class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                    <!-- text -->
-                    <span class="text-sm text-[#D6D0FB] xl:text-lg">Comercial
-                        Photography</span>
-                </div>
-                <!-- item #3 -->
-                <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                    <!-- icon -->
-                    <img src="./assets/icons/icon-brand.svg" alt="icon"
-                        class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                    <!-- text -->
-                    <span class="text-sm text-[#D6D0FB] xl:text-lg">Product
-                        Photography</span>
-                </div>
-                <!-- item #4 -->
-                <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                    <!-- icon -->
-                    <img src="./assets/icons/icon-brand.svg" alt="icon"
-                        class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                    <!-- text -->
-                    <span class="text-sm text-[#D6D0FB] xl:text-lg">Wedding
-                        Photography</span>
-                </div>
-                <!-- item #5 -->
-                <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                    <!-- icon -->
-                    <img src="./assets/icons/icon-brand.svg" alt="icon"
-                        class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                    <!-- text -->
-                    <span class="text-sm text-[#D6D0FB] xl:text-lg">Landscape
-                        Photography</span>
-                </div>
-                <!-- item #6 -->
-                <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                    <!-- icon -->
-                    <img src="./assets/icons/icon-brand.svg" alt="icon"
-                        class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                    <!-- text -->
-                    <span class="text-sm text-[#D6D0FB] xl:text-lg">Branding
-                        Photography</span>
-                </div>
-                <!-- item #7 -->
-                <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
-                    <!-- icon -->
-                    <img src="./assets/icons/icon-brand.svg" alt="icon"
-                        class="no-drag w-[30px] h-auto object-cover lg:w-[40px]">
-                    <!-- text -->
-                    <span class="text-sm text-[#D6D0FB] xl:text-lg">Portrait
-                        Photography</span>
-                </div>
+              class="mt-5 text-[28px] text-white uppercase font-semibold lg:mt-12 xl:mt-15 lg:text-5xl xl:text-[58px]"
+            >
+              <div class="flex items-center gap-2 xl:gap-x-3">
+                <span>Let’s</span>
+                <span
+                  class="flex items-center py-4 px-8 bg-[#4A2CED] rounded-[100px] shadow-[inset_4px_4px_17.4px_0px_#FFFFFF47] lg:px-7 lg:py-3"
+                >
+                  <img
+                    src="./assets/icons/icon-arrow.svg"
+                    alt="icon arrow"
+                    class="no-drag w-[20px] h-auto object-cover lg:w-6"
+                  />
+                </span>
+              </div>
+              <div class="mt-1 whitespace-nowrap xl:mt-3">Work Together</div>
             </div>
-        </div>
+          </div>
 
-        <!-- Footer info -->
-        <div class="relative max-w-[1597px] mx-auto border-b border-[#1C1C21]  xl:before:content-[''] xl:before:absolute xl:before:top-[50%] xl:before:-translate-y-1/2 xl:before:left-[-100px] xl:before:w-[200px] xl:before:h-[200px] 
-xl:before:bg-[#1C1C21] xl:before:[mask-image:url('./assets/images/icon-in-footer.png')] xl:before:[mask-size:contain] xl:before:[mask-position:center] xl:before:[mask-repeat:no-repeat] 
-
-xl:after:content-[''] xl:after:absolute xl:after:top-[50%] xl:after:-translate-y-1/2 xl:after:right-[-100px] xl:after:w-[200px] xl:after:h-[200px] 
-xl:after:bg-[#1C1C21] xl:after:[mask-image:url('./assets/images/icon-in-footer.png')] xl:after:[mask-size:contain] xl:after:[mask-position:center] xl:after:[mask-repeat:no-repeat] 
-xl:after:-scale-x-100">
-            <!-- Wrapper -->
-            <div class=" px-4 lg:flex xl:px-40">
-                <!-- Inner #1-->
-                <div class=" border-r border-l border-b border-[#1C1C21] px-4 py-10 lg:px-8 lg:py-20 xl:px-20
-                xl:py-25">
-                    <h4
-                        class="text-[#797C86] text-sm font-semibold uppercase lg:text-base xl:text-xl xl:whitespace-nowrap">
-                        A more meaningful home for photography
-                    </h4>
-
-                    <div
-                        class="mt-5 text-[28px] text-white uppercase font-semibold lg:mt-12 xl:mt-15 lg:text-5xl xl:text-[58px]">
-                        <div class="flex items-center gap-2 xl:gap-x-3">
-                            <span>Let’s</span>
-                            <span
-                                class="flex items-center py-4 px-8 bg-[#4A2CED] rounded-[100px] shadow-[inset_4px_4px_17.4px_0px_#FFFFFF47] lg:px-7 lg:py-3">
-                                <img src="./assets/icons/icon-arrow.svg" alt="icon arrow"
-                                    class="no-drag w-[20px] h-auto object-cover lg:w-6">
-                            </span>
-                        </div>
-                        <div class="mt-1 whitespace-nowrap xl:mt-3">
-                            Work Together
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Inner #2-->
-                <div
-                    class="grid grid-cols-2 gap-y-10 gap-x-[50px] border-r border-l border-[#1C1C21] px-5 py-10 lg:grid-cols-4 lg:py-20 lg:px-10 lg:gap-x-10 lg:grow">
-                    <!-- List 1 -->
-                    <div class="text-sm xl:text-lg">
-                        <h5 class="text-[#797C86] font-semibold uppercase">
-                            Home
-                        </h5>
-                        <ul class="flex flex-col gap-1 mt-3">
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">About
-                                    Me</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">My
-                                    Works</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Testimonials</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- List 2 -->
-                    <div class="text-sm xl:text-lg">
-                        <h5 class="text-[#797C86] font-semibold uppercase">
-                            Clients
-                        </h5>
-                        <ul class="flex flex-col gap-1 mt-3">
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Klovesto</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Nukeway</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Cloven’s</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">MenVol</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- List 3 -->
-                    <div class="text-sm xl:text-lg">
-                        <h5 class="text-[#797C86] font-semibold uppercase">
-                            Portfolio
-                        </h5>
-                        <ul class="flex flex-col gap-1 mt-3">
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Events</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Portrait</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Branding</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Commerciale</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Wedding</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- List 4 -->
-                    <div class="text-sm xl:text-lg">
-                        <h5 class="text-[#797C86] font-semibold uppercase">
-                            Clients
-                        </h5>
-                        <ul class="flex flex-col gap-1 mt-3">
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Portraits</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Events</a>
-                            </li>
-                            <li class="w-fit">
-                                <a href="#!"
-                                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap">Commercial
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+          <!-- Inner #2-->
+          <div
+            class="grid grid-cols-2 gap-y-10 gap-x-[50px] border-r border-l border-[#1C1C21] px-5 py-10 lg:grid-cols-4 lg:py-20 lg:px-10 lg:gap-x-10 lg:grow"
+          >
+            <!-- List 1 -->
+            <div class="text-sm xl:text-lg">
+              <h5 class="text-[#797C86] font-semibold uppercase">Home</h5>
+              <ul class="flex flex-col gap-1 mt-3">
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >About Me</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >My Works</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Testimonials</a
+                  >
+                </li>
+              </ul>
             </div>
-        </div>
 
-        <!-- Footer bottom -->
-        <div class="max-w-[1597px] mx-auto mt-5 lg:mt-4 xl:mt-0">
-            <!-- Wrapper -->
-            <div
-                class="flex flex-col items-center justify-center px-5  lg:flex-row lg:justify-between lg:items-center xl:px-40 xl:py-5">
-                <!-- Policy -->
-                <ul class="flex items-center divide-x divide-[#1C1C21] xl:order-1">
-                    <li class="px-2 xl:px-6">
-                        <a href="#!"
-                            class="text-sm font-normal text-[#797C86] hover:text-white transition-color duration-300 xl:text-lg">Terms
-                            & Conditions</a>
-                    </li>
-                    <li class="px-2 xl:px-6">
-                        <a href="#!"
-                            class="text-sm font-normal text-[#797C86] hover:text-white transition-color duration-300 xl:text-lg">Privacy
-                            Policy</a>
-                    </li>
-                </ul>
-
-                <!-- Copyright -->
-                <p class="mt-4 text-center text-sm font-normal text-[#797C86] lg:mt-0 xl:text-lg xl:order-3">
-                    © 2026 Damien Braun Photography. All rights reserved.
-                </p>
-
-                <!-- Social -->
-                <div
-                    class="inline-flex items-center justify-center gap-x-2 mt-4 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2">
-                    <a href="#!"
-                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                        <div class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                            <img src="./assets/icons/icon-facebook.svg" alt="Facebook icon"
-                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                        </div>
-                    </a>
-                    <a href="#!"
-                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                        <div class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                            <img src="./assets/icons/icon-x.svg" alt="X icon"
-                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                        </div>
-                    </a>
-                    <a href="#!"
-                        class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity">
-                        <div class="flex items-center justify-center bg-[#1C1C21] rounded-full w-9 h-9 xl:w-11 xl:h-11">
-                            <img src="./assets/icons/icon-linkedin.svg" alt="Linkedin icon"
-                                class="no-drag w-[18px] h-[18px] object-contain xl:w-5 xl:h-5">
-                        </div>
-                    </a>
-                </div>
+            <!-- List 2 -->
+            <div class="text-sm xl:text-lg">
+              <h5 class="text-[#797C86] font-semibold uppercase">Clients</h5>
+              <ul class="flex flex-col gap-1 mt-3">
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Klovesto</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Nukeway</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Cloven’s</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >MenVol</a
+                  >
+                </li>
+              </ul>
             </div>
+
+            <!-- List 3 -->
+            <div class="text-sm xl:text-lg">
+              <h5 class="text-[#797C86] font-semibold uppercase">Portfolio</h5>
+              <ul class="flex flex-col gap-1 mt-3">
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Events</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Portrait</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Branding</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Commerciale</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Wedding</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- List 4 -->
+            <div class="text-sm xl:text-lg">
+              <h5 class="text-[#797C86] font-semibold uppercase">Clients</h5>
+              <ul class="flex flex-col gap-1 mt-3">
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Portraits</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Events</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Commercial
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="max-w-[1597px] mx-auto mt-5 lg:mt-4 xl:mt-0">
+        <!-- Wrapper -->
+        <div
+          class="flex flex-col items-center justify-center px-5 lg:flex-row lg:justify-between lg:items-center xl:px-40 xl:py-5"
+        >
+          <!-- Policy -->
+          <ul class="flex items-center divide-x divide-[#1C1C21] xl:order-1">
+            <li class="px-2 xl:px-6">
+              <a
+                href="#!"
+                class="text-sm font-normal text-[#797C86] hover:text-white transition-color duration-300 xl:text-lg"
+                >Terms & Conditions</a
+              >
+            </li>
+            <li class="px-2 xl:px-6">
+              <a
+                href="#!"
+                class="text-sm font-normal text-[#797C86] hover:text-white transition-color duration-300 xl:text-lg"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+
+          <!-- Copyright -->
+          <p
+            class="mt-4 text-center text-sm font-normal text-[#797C86] lg:mt-0 xl:text-lg xl:order-3"
+          >
+            © 2026 Damien Braun Photography. All rights reserved.
+          </p>
+
+          <!-- Social -->
+          <div
+            class="inline-flex items-center justify-center gap-x-2 mt-4 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2"
+          >
+            <!-- Facebook -->
+            <a
+              href="#!"
+              class="no-dragno-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+            >
+              <div
+                class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+              >
+                <img
+                  src="./assets/icons/icon-facebook.svg"
+                  alt="Facebook icon"
+                  class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                />
+              </div>
+            </a>
+            <!-- Twitter -->
+            <a
+              href="#!"
+              class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+            >
+              <div
+                class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+              >
+                <img
+                  src="./assets/icons/icon-x.svg"
+                  alt="X icon"
+                  class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                />
+              </div>
+            </a>
+            <!-- Linkedin -->
+            <a
+              href="#!"
+              class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+            >
+              <div
+                class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+              >
+                <img
+                  src="./assets/icons/icon-linkedin.svg"
+                  alt="Linkedin icon"
+                  class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
-
-</html>`
+  </body>
+</html>
+`

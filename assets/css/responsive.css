@@ -1,0 +1,392 @@
+/* laptop */
+@media screen and (max-width: 1500px) {
+  /* ! fz */
+  .content__item-price {
+    font-size: 5rem;
+  }
+
+  .hero__header-title,
+  .question__header-title,
+  .footer__flex--acive ~ p,
+  .flex--active-block p,
+  .footer__flex--acive > p {
+    font-size: 4.8rem;
+  }
+
+  .header__content-title {
+    font-size: 3.4rem;
+  }
+
+  .content-item--right-title,
+  .footer__flex-left {
+    font-size: 1.8rem;
+  }
+
+  .hero__header span,
+  .hero__header-desc,
+  .header__content-desc,
+  .item-left-block p,
+  .content__item-right span,
+  .content-item--right-desc,
+  .footer__top-item span,
+  .footer__flex-right ul > li:first-child a,
+  .footer__bottom > p,
+  .footer__bottom-left {
+    font-size: 1.6rem;
+  }
+
+  .header__btn,
+  .header__nav-item,
+  .hero__active,
+  .header__content-activeLink a,
+  .content__item-cta a,
+  .footer__bottom-center .footer__active,
+  .footer__bottom > p.footer__bottom-left,
+  .footer__flex-right ul > li:not(:first-child) a,
+  .footer__flex-left > p {
+    font-size: 1.4rem;
+  }
+
+  .flex--active-block p,
+  .footer__flex--acive > p {
+    font-size: 2.8rem;
+  }
+
+  /* !container */
+  .container {
+    max-width: 1280px;
+    padding: 0 40px;
+  }
+
+  /* !Header */
+  .header__content {
+    padding: 20px 16px;
+  }
+
+  .header__content > img {
+    width: 110px;
+    height: 22px;
+  }
+  .header__nav-item {
+    padding: 24px 30px;
+  }
+
+  .header__nav-item {
+    padding: 24px 40px;
+  }
+
+  /* !Hero */
+  .hero__header {
+    width: 1080px;
+  }
+  .hero__header-title {
+    font-size: 4.8rem;
+  }
+
+  .image-top-right {
+    left: 80px;
+  }
+
+  .hero-icon {
+    width: 161px;
+    height: 137px;
+  }
+  .image-bottom-right {
+    left: 161px;
+  }
+  .image-top-left {
+    bottom: 137px;
+  }
+
+  .hero__active {
+    width: 259px;
+    padding: 49px 20px 49px 71px;
+  }
+  .image-right-bottom-left {
+    bottom: 128px;
+  }
+  .image-right-bottom-right {
+    right: 259px;
+  }
+
+  /* !service header */
+  .block__header__content {
+    width: 510px;
+  }
+
+  .header-prieview-imgBox {
+    width: 718px;
+    height: 311px;
+  }
+
+  .item-left-block {
+    margin-left: 80px;
+  }
+
+  /*!logo--bigsize  */
+  .logo--bigsize img {
+    width: 846px;
+    height: 169px;
+  }
+  /* !Footer */
+  .footer__flex-right,
+  .footer__flex-left {
+    padding: 80px;
+  }
+
+  .footer__flex-right ul:not(:first-child) {
+    margin-left: 70px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-img {
+    width: 100%;
+  }
+  .image-top-right,
+  .hero-icon,
+  .image-bottom-right,
+  .image-top-left,
+  .hero__active,
+  .image-right-bottom-left,
+  .image-right-bottom-right {
+    display: none;
+  }
+
+  .hero__header {
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    position: static;
+  }
+}
+
+/* mobie iphone 6/7/8 */
+@media screen and (max-width: 540px) {
+  /* ! fz */
+  .hero__header span,
+  .hero__header-desc,
+  .header__content-desc,
+  .item-left-block p,
+  .content-item--right-desc {
+    font-size: 1.4rem;
+  }
+  .content__item-right span,
+  .content-item--right-title {
+    font-size: 1.6rem;
+  }
+
+  .header__btn,
+  .header__nav-item,
+  .hero__active,
+  .header__content-activeLink a,
+  .footer__bottom > p,
+  .footer__bottom-center .content__item-cta a {
+    font-size: 1.4rem;
+  }
+  .header__content-title,
+  .content__item-price {
+    font-size: 3.4rem !important;
+  }
+
+  /* !Container */
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  /* !header */
+  .header__content {
+    padding: 0 0;
+    padding-top: 40px;
+    padding-left: 20px;
+  }
+
+  .header__content .toggle-btn {
+    display: block;
+    padding: 20px;
+    border: 1px solid #1c1c21;
+    border-top-left-radius: 16px;
+  }
+
+  .header__nav,
+  .header__btn {
+    display: none;
+  }
+
+  .image-top-right,
+  .hero-icon,
+  .image-bottom-right,
+  .image-top-left,
+  .hero__active,
+  .image-right-bottom-left,
+  .image-right-bottom-right {
+    display: none;
+  }
+
+  /* !Hero */
+
+  .hero-img {
+    width: 100%;
+    height: 219px;
+    object-fit: cover;
+    border-radius: 0%;
+  }
+
+  .hero__header {
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    position: static;
+  }
+
+  .hero__header-title,
+  .question__header-title {
+    font-size: 2.8rem;
+    color: #fff;
+  }
+
+  .service__block__header {
+    flex-direction: column;
+  }
+
+  .block__header__content {
+    width: 100%;
+  }
+
+  .block__header-preview {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .header-prieview-imgBox {
+    width: 100%;
+    height: 250px;
+  }
+
+  .block__content__item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 0;
+  }
+
+  .content__item-right {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .content__item-left {
+    width: 100%;
+  }
+
+  .item-left-block {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* !.service */
+
+  .service {
+    margin-top: 50px;
+  }
+  .service .header-preview-btn .block {
+    padding: 8px;
+  }
+
+  .header-preview-btn::after {
+    width: 140px;
+    bottom: -60px;
+  }
+
+  /* ! Question */
+  .question__content {
+    grid-template-columns: 1fr;
+  }
+
+  .question__content-item {
+    padding: 20px 24px;
+    width: 100%;
+  }
+
+  .question__col.right-col {
+    display: none;
+  }
+
+  /*!logo--bigsize  */
+  .logo--bigsize img {
+    width: 300px;
+    height: 150px;
+  }
+
+  /*!Footer  */
+
+  .footer__top-item {
+    padding: 1.6rem;
+  }
+
+  .footer-icon {
+    display: none;
+  }
+  .footer__flex-right,
+  .footer__flex-left {
+    padding: 4rem 2rem;
+  }
+
+  .flex--active-block .footer-active {
+    padding: 1.4rem 3rem;
+  }
+
+  .footer__flex {
+    flex-direction: column;
+  }
+
+  .footer__flex-left {
+    border-bottom: 1px solid #111114;
+  }
+
+  .footer__flex-right {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__flex--acive {
+    margin-top: 2rem;
+  }
+
+  .footer__flex-right ul:not(:first-child) {
+    margin: 0;
+  }
+  .footer__flex-right ul:nth-child(even) {
+    margin-left: 50px;
+  }
+  .footer__flex-right ul:nth-child(3) {
+    margin-top: 40px;
+  }
+  .footer__flex-right ul:last-child {
+    margin-top: 40px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+  }
+
+  .footer__bottom-left {
+    margin-bottom: 1.6rem;
+  }
+
+  .footer__bottom > p {
+    margin-bottom: 1.6rem;
+    order: 1;
+  }
+
+  .footer__bottom-center {
+    padding: 8px;
+    order: 2;
+  }
+
+  .footer__flex-left > p {
+    white-space: nowrap;
+  }
+}
