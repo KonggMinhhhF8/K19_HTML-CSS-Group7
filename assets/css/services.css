@@ -44,9 +44,8 @@ html {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-
   display: flex;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 1rem 1rem 0 0;
   border-top: 1px solid #1c1c21;
   border-right: 1px solid #1c1c21;
   border-left: 1px solid #1c1c21;
@@ -55,9 +54,9 @@ html {
 
 .header__nav-item {
   display: inline-block;
-  padding: 30px 40px;
+  padding: 32px 52px;
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   line-height: 1.5;
 
   transition: all 0.3s;
@@ -74,6 +73,7 @@ html {
 
 .header__btn {
   padding: 16px 24px;
+  font-size: 1.4rem;
   border: none;
   color: #fff;
   border-radius: 0.5rem;
@@ -462,7 +462,6 @@ html {
   align-items: center;
   justify-content: center;
   width: 52px;
-  height: 52px;
   padding: 12px;
   border: 1px solid #1c1c21;
   border-radius: 50%;
