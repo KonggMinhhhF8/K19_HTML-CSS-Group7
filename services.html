@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,24 +13,93 @@
     />
     <link rel="stylesheet" href="assets/css/services.css" />
     <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .nav-item {
+          @apply block px-10 py-6 text-sm text-[#AFB0B6] font-medium hover:text-white hover:bg-[#131316] transition-all duration-300 ease-in-out xl:px-13 xl:py-8;
+        }
+
+        @layer utilities {
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .animate-marquee {
+            animation: scroll 20s linear infinite;
+          }
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__content">
-          <img src="./assets/icons/Logo.svg" alt="Logo" />
+    <header class="w-full border-b-2 border-[#1C1C21]">
+      <!-- Wrapper -->
+      <div class="max-w-[1597px] mx-auto px-4 lg:px-15">
+        <!-- Inner -->
+        <div
+          class="flex justify-between items-center border-l border-r border-[#1C1C21] pt-10 pl-4 lg:px-4 lg:pt-5 xl:items-end xl:px-10 xl:pt-0"
+        >
+          <!-- Logo -->
+          <a href="/" class="xl:self-center">
+            <img
+              src="./assets/images/logo-brand.svg"
+              alt="Logo DAMIEN"
+              class="w-[90px] h-auto object-contain lg:w-[110px] xl:w-[135px]"
+            />
+          </a>
 
-          <input type="checkbox" name="" id="toggle-input" hidden />
-          <label class="toggle-btn" for="toggle-input"
-            ><img src="./assets/icons/toggle-icon.svg" alt=""
-          /></label>
-          <nav class="header__nav">
-            <a class="header__nav-item">Home</a>
-            <a class="header__nav-item">About Me</a>
-            <a class="header__nav-item">Portfolio</a>
-            <a class="header__nav-item">Services</a>
+          <!-- Nav -->
+          <nav class="hidden lg:block lg:leading-none">
+            <ul
+              class="flex items-center divide-x divide-[#1C1C21] border border-b-0 border-[#1C1C21] rounded-t-[10px] overflow-hidden"
+            >
+              <li>
+                <a href="./index.html" class="nav-item">Home</a>
+              </li>
+              <li>
+                <a href="#!" class="nav-item">About Me</a>
+              </li>
+              <li>
+                <a href="#!" class="nav-item">Portfolio</a>
+              </li>
+              <li>
+                <a href="#!" class="nav-item">Services</a>
+              </li>
+            </ul>
           </nav>
-          <button class="header__btn">Contact Me</button>
+
+          <!-- Menu Mobile -->
+          <button
+            class="block lg:hidden px-6 pt-7 pb-6 border border-b-0 border-r-0 border-[#1C1C21] rounded-tl-[20px] focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3.5 7.875C3.5 7.39175 3.89175 7 4.375 7H23.625C24.1082 7 24.5 7.39175 24.5 7.875C24.5 8.35825 24.1082 8.75 23.625 8.75H4.375C3.89175 8.75 3.5 8.35825 3.5 7.875ZM3.5 14C3.5 13.5168 3.89175 13.125 4.375 13.125H23.625C24.1082 13.125 24.5 13.5168 24.5 14C24.5 14.4832 24.1082 14.875 23.625 14.875H4.375C3.89175 14.875 3.5 14.4832 3.5 14ZM13.125 20.125C13.125 19.6418 13.5168 19.25 14 19.25H23.625C24.1082 19.25 24.5 19.6418 24.5 20.125C24.5 20.6082 24.1082 21 23.625 21H14C13.5168 21 13.125 20.6082 13.125 20.125Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+
+          <!-- CTA -->
+          <a
+            href="#!"
+            class="hidden lg:inline-flex justify-between items-center border border-[#2F2F37] rounded-lg px-6 py-4 bg-[#1C1C21] text-white text-sm font-medium hover:bg-[#2F2F37] transition-all duration-200 xl:my-7"
+          >
+            Contact Me
+          </a>
         </div>
       </div>
     </header>
@@ -46,6 +112,7 @@
             src="./assets//images/hero-img.png"
             alt="hero-img"
           />
+          <div class="image-top-right-right"></div>
           <div class="image-top-right"></div>
           <div class="hero__header">
             <span>Services</span>
@@ -313,7 +380,7 @@
                 <div class="content__item__block">
                   <p
                     class="content__item-price"
-                    style="font-size: 5.5rem; line-height: 1.2; width: 205px"
+                    style="font-size: 55px; line-height: 1.2; width: 205px"
                   >
                     Custom Pricing
                   </p>
@@ -447,7 +514,7 @@
                 <div class="content__item__block">
                   <p
                     class="content__item-price"
-                    style="font-size: 5.5rem; line-height: 1.2; width: 205px"
+                    style="font-size: 55px; line-height: 1.2; width: 205px"
                   >
                     Custom Pricing
                   </p>
@@ -665,139 +732,375 @@
       </div>
     </div>
 
-    <div class="logo--bigsize">
-      <div class="container">
-        <img src="./assets/icons/Logo-big-size.svg" alt="" />
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="footer__top">
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
-        </div>
-        <div class="footer__top-item">
-          <img src="./assets/icons/star-servie-light.svg" alt="" />
-          <span>Event Photography</span>
+    <footer class="w-full overflow-x-hidden pb-5 mt-20 lg:mt-37 xl:mt-50">
+      <!-- Footer TOP -->
+      <div class="max-w-[1597px] mx-auto">
+        <!-- Inner -->
+        <div class="px-4 pb-5 lg:px-20 lg:pb-15 xl:px-40 xl:pb-25">
+          <img
+            class="no-drag block ml-auto w-[315px] h-auto object-cover lg:w-[846px] xl:w-[1050px]"
+            src="./assets/images/bg-logo.png"
+            alt="background logo"
+          />
         </div>
       </div>
-      <div class="footer__content">
-        <img
-          class="footer-icon footer-icon-right"
-          src="./assets/icons/footer-icon.svg"
-          alt=""
-        />
 
-        <div class="container">
-          <div class="footer__flex">
-            <div class="footer__flex-left">
-              <p>A more meaningful home for photography</p>
-              <div class="footer__flex--acive">
-                <div class="flex--active-block">
-                  <p>Let's</p>
-                  <a href="#!" class="footer-active"
-                    ><img src="./assets/icons/arrow.svg" alt=""
-                  /></a>
-                </div>
+      <!-- List Logo -->
+      <div class="w-full flex bg-[#0E0E10]">
+        <div
+          class="animate-marquee flex items-center gap-5 border-y border-[#1C1C21] py-4 whitespace-nowrap lg:gap-x-4 xl:py-7 xl:gap-x-5"
+        >
+          <!-- item #1 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Event Photography</span
+            >
+          </div>
+          <!-- item #2 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Comercial Photography</span
+            >
+          </div>
+          <!-- item #3 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Product Photography</span
+            >
+          </div>
+          <!-- item #4 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Wedding Photography</span
+            >
+          </div>
+          <!-- item #5 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Landscape Photography</span
+            >
+          </div>
+          <!-- item #6 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Branding Photography</span
+            >
+          </div>
+          <!-- item #7 -->
+          <div class="flex items-center gap-1 shrink-0 xl:gap-x-2">
+            <!-- icon -->
+            <img
+              src="./assets/icons/icon-brand.svg"
+              alt="icon"
+              class="no-drag w-[30px] h-auto object-cover lg:w-[40px]"
+            />
+            <!-- text -->
+            <span class="text-sm text-[#D6D0FB] xl:text-lg"
+              >Portrait Photography</span
+            >
+          </div>
+        </div>
+      </div>
 
-                <p>Work Together</p>
+      <!-- Footer info -->
+      <div
+        class="relative max-w-[1597px] mx-auto border-b border-[#1C1C21] xl:before:content-[''] xl:before:absolute xl:before:top-[50%] xl:before:-translate-y-1/2 xl:before:left-[-100px] xl:before:w-[200px] xl:before:h-[200px] xl:before:bg-[#1C1C21] xl:before:[mask-image:url('./assets/images/icon-in-footer.png')] xl:before:[mask-size:contain] xl:before:[mask-position:center] xl:before:[mask-repeat:no-repeat] xl:after:content-[''] xl:after:absolute xl:after:top-[50%] xl:after:-translate-y-1/2 xl:after:right-[-100px] xl:after:w-[200px] xl:after:h-[200px] xl:after:bg-[#1C1C21] xl:after:[mask-image:url('./assets/images/icon-in-footer.png')] xl:after:[mask-size:contain] xl:after:[mask-position:center] xl:after:[mask-repeat:no-repeat] xl:after:-scale-x-100"
+      >
+        <!-- Wrapper -->
+        <div class="px-4 lg:flex xl:px-40">
+          <!-- Inner #1-->
+          <div
+            class="border-r border-l border-b border-[#1C1C21] px-4 py-10 lg:px-8 lg:py-20 xl:px-20 xl:py-25"
+          >
+            <h4
+              class="text-[#797C86] text-sm font-semibold uppercase lg:text-base xl:text-xl xl:whitespace-nowrap"
+            >
+              A more meaningful home for photography
+            </h4>
+
+            <div
+              class="mt-5 text-[28px] text-white uppercase font-semibold lg:mt-12 xl:mt-15 lg:text-5xl xl:text-[58px]"
+            >
+              <div class="flex items-center gap-2 xl:gap-x-3">
+                <span>Let’s</span>
+                <span
+                  class="flex items-center py-4 px-8 bg-[#4A2CED] rounded-[100px] shadow-[inset_4px_4px_17.4px_0px_#FFFFFF47] lg:px-7 lg:py-3"
+                >
+                  <img
+                    src="./assets/icons/icon-arrow.svg"
+                    alt="icon arrow"
+                    class="no-drag w-[20px] h-auto object-cover lg:w-6"
+                  />
+                </span>
               </div>
+              <div class="mt-1 whitespace-nowrap xl:mt-3">Work Together</div>
             </div>
-            <div class="footer__flex-right">
-              <ul>
-                <li><a href="#!">Home</a></li>
-                <li><a href="#!">About Me</a></li>
-                <li><a href="#!">My Works</a></li>
-                <li><a href="#!">Testimonials</a></li>
+          </div>
+
+          <!-- Inner #2-->
+          <div
+            class="grid grid-cols-2 gap-y-10 gap-x-[50px] border-r border-l border-[#1C1C21] px-5 py-10 lg:grid-cols-4 lg:py-20 lg:px-10 lg:gap-x-10 lg:grow"
+          >
+            <!-- List 1 -->
+            <div class="text-sm xl:text-lg">
+              <h5 class="text-[#797C86] font-semibold uppercase">Home</h5>
+              <ul class="flex flex-col gap-1 mt-3">
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >About Me</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >My Works</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Testimonials</a
+                  >
+                </li>
               </ul>
-              <ul>
-                <li><a href="#!">Klovestor</a></li>
-                <li><a href="#!">Nukeway</a></li>
-                <li><a href="#!">Clovenss</a></li>
-                <li><a href="#!">Menvol</a></li>
+            </div>
+
+            <!-- List 2 -->
+            <div class="text-sm xl:text-lg">
+              <h5 class="text-[#797C86] font-semibold uppercase">Clients</h5>
+              <ul class="flex flex-col gap-1 mt-3">
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Klovesto</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Nukeway</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Cloven’s</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >MenVol</a
+                  >
+                </li>
               </ul>
-              <ul>
-                <li><a href="#!">Events</a></li>
-                <li><a href="#!">Portrait</a></li>
-                <li><a href="#!">Branding</a></li>
-                <li><a href="#!">Commericale</a></li>
-                <li><a href="#!">Wedding</a></li>
+            </div>
+
+            <!-- List 3 -->
+            <div class="text-sm xl:text-lg">
+              <h5 class="text-[#797C86] font-semibold uppercase">Portfolio</h5>
+              <ul class="flex flex-col gap-1 mt-3">
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Events</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Portrait</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Branding</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Commerciale</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Wedding</a
+                  >
+                </li>
               </ul>
-              <ul>
-                <li><a href="#!">Portraits</a></li>
-                <li><a href="#!">Events</a></li>
-                <li><a href="#!">Commercial</a></li>
+            </div>
+
+            <!-- List 4 -->
+            <div class="text-sm xl:text-lg">
+              <h5 class="text-[#797C86] font-semibold uppercase">Clients</h5>
+              <ul class="flex flex-col gap-1 mt-3">
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Portraits</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Events</a
+                  >
+                </li>
+                <li class="w-fit">
+                  <a
+                    href="#!"
+                    class="hover-item inline-block w-full border-b border-[#2F2F37] py-[6px] text-[#F2F2F3] font-medium whitespace-nowrap"
+                    >Commercial
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-
-        <img
-          class="footer-icon footer-icon-left"
-          src="./assets/icons/footer-icon.svg"
-          alt=""
-        />
       </div>
-      <div class="footer__bottom">
-        <div class="footer__bottom-left">
-          <p>Terms & Conditions</p>
-          <p>Policy</p>
-        </div>
 
-        <div class="footer__bottom-center">
-          <button class="footer__active">
-            <img src="./assets/icons/facebook.svg" alt="" />
-          </button>
-          <button class="footer__active">
-            <img src="./assets/icons/twitter.svg" alt="" />
-          </button>
-          <button class="footer__active">
-            <img src="./assets/icons/linkdn.svg" alt="" />
-          </button>
-        </div>
+      <!-- Footer bottom -->
+      <div class="max-w-[1597px] mx-auto mt-5 lg:mt-4 xl:mt-0">
+        <!-- Wrapper -->
+        <div
+          class="flex flex-col items-center justify-center px-5 lg:flex-row lg:justify-between lg:items-center xl:px-40 xl:py-5"
+        >
+          <!-- Policy -->
+          <ul class="flex items-center divide-x divide-[#1C1C21] xl:order-1">
+            <li class="px-2 xl:px-6">
+              <a
+                href="#!"
+                class="text-sm font-normal text-[#797C86] hover:text-white transition-color duration-300 xl:text-lg"
+                >Terms & Conditions</a
+              >
+            </li>
+            <li class="px-2 xl:px-6">
+              <a
+                href="#!"
+                class="text-sm font-normal text-[#797C86] hover:text-white transition-color duration-300 xl:text-lg"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
 
-        <p>© 2024 Damien Braun Photography. All rights reserved.</p>
+          <!-- Copyright -->
+          <p
+            class="mt-4 text-center text-sm font-normal text-[#797C86] lg:mt-0 xl:text-lg xl:order-3"
+          >
+            © 2026 Damien Braun Photography. All rights reserved.
+          </p>
+
+          <!-- Social -->
+          <div
+            class="inline-flex items-center justify-center gap-x-2 mt-4 p-2 border border-[#1C1C21] rounded-full xl:p-3 xl:gap-x-3 xl:order-2"
+          >
+            <!-- Facebook -->
+            <a
+              href="#!"
+              class="no-dragno-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+            >
+              <div
+                class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+              >
+                <img
+                  src="./assets/icons/icon-facebook.svg"
+                  alt="Facebook icon"
+                  class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                />
+              </div>
+            </a>
+            <!-- Twitter -->
+            <a
+              href="#!"
+              class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+            >
+              <div
+                class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+              >
+                <img
+                  src="./assets/icons/icon-x.svg"
+                  alt="X icon"
+                  class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                />
+              </div>
+            </a>
+            <!-- Linkedin -->
+            <a
+              href="#!"
+              class="no-drag rounded-full bg-gradient-to-b from-[#2F2F37] to-transparent p-[1px] hover:opacity-80 transition-opacity"
+            >
+              <div
+                class="flex items-center justify-center bg-[#1C1C21] rounded-full p-[9px] xl:px-2 xl:py-2"
+              >
+                <img
+                  src="./assets/icons/icon-linkedin.svg"
+                  alt="Linkedin icon"
+                  class="no-drag w-[18px] h-[18px] object-contain xl:w-5"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
